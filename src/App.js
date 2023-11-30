@@ -12,26 +12,32 @@ function App() {
   const [showSettings, setShowSettings] = useState(false);
   const [workMinutes, setWorkMinutes] = useState(25);
   const [breakMinutes, setBreakMinutes] = useState(5);
-  
+
   return (
     <div className='App'>
-      <main>
-        {/* Pomodoro Timer */}
-        <SettingsContext.Provider value={{
-          showSettings,
-          setShowSettings,
-          workMinutes,
-          breakMinutes,
-          setWorkMinutes,
-          setBreakMinutes,
-        }}>
-          {showSettings ? <Settings /> : <Timer />}
-        </SettingsContext.Provider>
-        {/* Clock */}
-        <Clock />
-        {/* Weather */}
-        <WeatherApp />
-      </main>
+      <div className="container">
+        <div className="item item-1">
+          {/* Pomodoro Timer */}
+          <SettingsContext.Provider value={{
+            showSettings,
+            setShowSettings,
+            workMinutes,
+            breakMinutes,
+            setWorkMinutes,
+            setBreakMinutes,
+          }}>
+            {showSettings ? <Settings /> : <Timer />}
+          </SettingsContext.Provider>
+        </div>
+        <div className="item item-2">
+          {/* Clock */}
+          <Clock />
+        </div>
+        <div className='item item-3'>
+          {/* Weather */}
+          <WeatherApp />
+        </div>
+      </div>
     </div>
   )
 }

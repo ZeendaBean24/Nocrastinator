@@ -4,10 +4,15 @@ export const PlayerButton = styled.button`
     background-color: transparent;
     color: rgba(255, 255, 255, 0.8);    
     border: 0;
-    display: inline-block;
-    width: 100px;
     cursor: pointer;
+    width: 100px;
 `;
+
+export const PlayerContainer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+`
 
 export const SettingsContainer = styled(PlayerButton)`
     width: auto;
@@ -22,6 +27,7 @@ export const SettingsSVG = styled.svg`
     width: 36px;
     float: left;
     margin-right: 5px;
+
 `
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { PlayerButton } from './styles';
+import { PlayerButton} from './styles';
 
 function PlayButton(props) {
   return (

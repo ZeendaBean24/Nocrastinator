@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { WeatherContainer, TopBar, CityInput, SearchIcon, WeatherImage, WeatherTemp, WeatherLocation, DataContainer, WeatherElement, WeatherData, HumidityPercent, WeatherText, WeatherIcon, WindRate } from './styles'
+import { WeatherContainer, TopBar, CityInput, SearchIcon, WeatherImage, WeatherTemp, WeatherLocation, DataContainer, HumidityElement, WindElement, WeatherData, HumidityPercent, WeatherText, WeatherIcon, WindRate } from './styles'
 
 import search_icon from '../../assets/search.png'
 import clear_icon from '../../assets/clear.png'
@@ -99,20 +99,20 @@ function WeatherApp() {
             {locationVal}
         </WeatherLocation>
         <DataContainer>
-            <WeatherElement>
+            <HumidityElement>
                 <WeatherIcon src={humidity_icon} alt=""/>
                 <WeatherData>
                     <HumidityPercent>{humidityVal} %</HumidityPercent>
                     <WeatherText>Humidity</WeatherText>
                 </WeatherData>
-            </WeatherElement>
-            <WeatherElement>
+            </HumidityElement>
+            <WindElement>
                 <WeatherIcon src={wind_icon} alt=""/>
                 <WeatherData>
                     <WindRate>{windVal} km/h</WindRate>
                     <WeatherText>Wind Speed</WeatherText>
                 </WeatherData>
-            </WeatherElement>
+            </WindElement>
         </DataContainer>
     </WeatherContainer>
   )

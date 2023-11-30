@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const WeatherContainer = styled.div`
-    width: 607px;
-    height: 829px;
+    width: 225px;
+    height: 400px;
     /* width: 300px;
     height: 600px; */
     margin: auto;
@@ -14,21 +14,21 @@ export const WeatherContainer = styled.div`
 export const TopBar = styled.div`
     display: flex;
     justify-content: center;
-    gap: 14px;
-    padding-top: 60px;
+    gap: 10px;
+    padding-top: 30px;
 `
 
 export const CityInput = styled.input`
     display: flex;
-    width: 362px;
-    height: 78px;
+    width: 110px;
+    height: 39px;
     background: #ebfffc;
     border: none;
     outline: none;
     border-radius: 40px;
-    padding-left: 40px;
+    padding-left: 20px;
     color: #626262;
-    font-size: 20px;
+    font-size: 12px;
     font-weight: 400;
 `
 
@@ -36,23 +36,26 @@ export const SearchIcon = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 78px;
-    height: 78px;
+    width: 39px;
+    height: 39px;
     background: #ebfffc;
     border-radius: 40px;
     cursor: pointer;
 `
 export const WeatherImage = styled.div`
-    margin-top: 29px;
+    margin-top: 15px;
     display: flex;
+    height: 100px;
     justify-content: center;
+    align-content: center;
 `
 
 export const WeatherTemp = styled.div`
     display: flex;
     justify-content: center;
     color: white;
-    font-size: 120px;
+    height: 35px;
+    font-size: 30px;
     font-weight: 400;
 `
 
@@ -60,26 +63,40 @@ export const WeatherLocation = styled.div`
     display: flex;
     justify-content: center;
     color: white;
-    font-size: 60px;
+    height: 25px;
+    font-size: 25px;
     font-weight: 400;
 `
 
 export const DataContainer = styled.div`
-    margin-top: 50px;
+    margin-top: 25px;
     color: white;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 15px;
 `
 
-export const WeatherElement = styled.div`
+export const HumidityElement = styled.div`
     margin: auto;
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+`
+
+export const WindElement = styled.div`
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
 `
 
 export const WeatherData = styled.div`
-    font-size: 34px;
+    font-size: 15px;
     font-weight: 400;
 `
 
@@ -92,10 +109,11 @@ export const WindRate = styled.div`
 `
 
 export const WeatherText = styled.div`
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 400;
 `
 
 export const WeatherIcon = styled.img`
     margin-top: 10px;
+    width: 25px;
 `
