@@ -37,6 +37,11 @@
   }
 } */
 
+:root{
+  --red: #f54e4e;
+  --green: #4aec8c;
+}
+
 .App {
   margin: 0;
   padding: 50px;
