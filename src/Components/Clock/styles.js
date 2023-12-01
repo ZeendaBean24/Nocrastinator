@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ClockContainer = styled.div`
     width: auto;
-    height: 20vh;
+    height: 10vh;
     overflow: hidden;
     text-align: center;
 `
@@ -10,7 +10,7 @@ export const ClockContainer = styled.div`
 export const ClockText = styled.h1`
     border: 2px solid burlywood;
     width: 250px;
-    margin: 10vh auto 0px auto;
+    margin: 2vh auto 0px auto;
     border-radius: 15px;
     padding: 10px 0;
     background-color: cornsilk;

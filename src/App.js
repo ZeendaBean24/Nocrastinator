@@ -6,6 +6,14 @@ import { useState } from 'react';
 import Timer from './Components/PomodoroTimer';
 import Settings from './Components/PomodoroTimer/SettingsPage/settings';
 import SettingsContext from './Components/PomodoroTimer/SettingsPage/SettingsContext';
+import Greeting from './Components/Greeting';
+
+// Weather app: responsive auto skip, auto detect
+// Pomodoro timer: bugs fixes, alert the user
+// Greeting: update using state
+// Naming best practices
+// How to overflow text into side divs
+
 
 function App() {
 
@@ -30,6 +38,8 @@ function App() {
           </SettingsContext.Provider>
         </div>
         <div className="item item-2">
+          {/* Greeting */}
+          <Greeting />
           {/* Clock */}
           <Clock />
         </div>
