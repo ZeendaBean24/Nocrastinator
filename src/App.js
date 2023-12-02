@@ -13,6 +13,7 @@ import Greeting from './Components/Greeting';
 // Greeting: update using state
 // Naming best practices
 // How to overflow text into side divs
+// *****Rename new tab to FOCUS
 
 
 function App() {

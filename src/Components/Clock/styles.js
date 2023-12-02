@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ClockContainer = styled.div`
     width: auto;
-    height: 10vh;
+    height: 20vh;
     overflow: hidden;
     text-align: center;
 `
