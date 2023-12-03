@@ -15,7 +15,6 @@ import Greeting from './Components/Greeting';
 // How to overflow text into side divs
 // *****Rename new tab to FOCUS
 
-
 function App() {
 
   const [showSettings, setShowSettings] = useState(false);
