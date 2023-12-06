@@ -27,7 +27,7 @@ function App() {
   const links = [
     { name: 'Google', url: 'https://www.google.com' },
     { name: 'Facebook', url: 'https://www.facebook.com' },
-    { name: 'Hockey', url: 'hhtps://www.nhl.com'}
+    { name: 'Hockey', url: 'https://www.nhl.com'}
       // Add more links as needed
   ];
 
