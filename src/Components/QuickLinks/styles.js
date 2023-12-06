@@ -37,3 +37,9 @@ export const DropdownContent = styled.div`
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 `;
+
+export const LogoImage = styled.img`
+  height: 20px; // Adjust size as needed
+  width: auto;
+  margin-right: 10px;
+`;

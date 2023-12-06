@@ -1,20 +1,21 @@
 import './App.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Clock from './Components/Clock';
 import WeatherApp from './Components/Weather';
-import { useState } from 'react';
 import Timer from './Components/PomodoroTimer';
 import Settings from './Components/PomodoroTimer/SettingsPage/settings';
 import SettingsContext from './Components/PomodoroTimer/SettingsPage/SettingsContext';
 import Greeting from './Components/Greeting';
 import QuickLinks from './Components/QuickLinks';
+import fetchBackgroundImage from './Components/BackgroundImage';
 
 // Weather app: responsive auto skip, auto detect
 // Pomodoro timer: bugs fixes, alert the user
 // Greeting: update using state
 // Naming best practices
 // How to overflow text into side divs
-// *****Rename new tab to FOCUS
+// USE BACKEND; ADD LINKS AND STORE IT IN DATABASE FOR QUICK LINKS
+// FIX LOGO PROBLEM
 
 function App() {
 
@@ -26,12 +27,34 @@ function App() {
   const links = [
     { name: 'Google', url: 'https://www.google.com' },
     { name: 'Facebook', url: 'https://www.facebook.com' },
+    { name: 'Hockey', url: 'hhtps://www.nhl.com'}
       // Add more links as needed
   ];
 
+  const [backgroundImageUrl, setBackgroundImageUrl] = useState('');
+
+  useEffect(() => {
+    async function fetchImage() {
+      const imageUrl = await fetchBackgroundImage();
+      setBackgroundImageUrl(imageUrl);
+    }
+      fetchImage();
+    }, []);
+
+  const backgroundStyle = {
+      backgroundImage: `url(${backgroundImageUrl})`,
+      backgroundSize: 'cover', // This ensures the image covers the entire element
+      backgroundPosition: 'center', // This centers the image in the element
+      backgroundRepeat: 'no-repeat', // This prevents the image from repeating
+      minHeight: '100vh', // Ensure it covers the whole viewport height
+      minWidth: '100vw', // Ensure it covers the whole viewport width
+    };
+
+  console.log(backgroundImageUrl)
+
   return (
-    <div className='App'>
-      <div className="container">
+    <div className='App' style={backgroundStyle}>
+      <div className="container" >
         <div className="item item-1">
           {/* Pomodoro Timer */}
           <SettingsContext.Provider value={{
