@@ -1,7 +1,7 @@
 // Function to fetch a new background image from Unsplash
 const fetchNewBackgroundImage = async () => {
     try {
-      const response = await fetch(`https://api.unsplash.com/photos/random?query=dark&client_id=FypcUjo1nqpvJrkq77hXGYZR9z__ejXa-9VT1X3uXSU`);
+      const response = await fetch(`https://api.unsplash.com/photos/random?query=dark_wallpaper&client_id=FypcUjo1nqpvJrkq77hXGYZR9z__ejXa-9VT1X3uXSU`);
       const data = await response.json();
       return data.urls.full;
     } catch (error) {
