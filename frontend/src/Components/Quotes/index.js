@@ -5,19 +5,34 @@ const QuoteDisplay = () => {
     const [quoteData, setQuoteData] = useState({ quote: '', author: '', category: '' });
     const [error, setError] = useState('');
 
+    useEffect(() => {
+        const today = new Date().toLocaleDateString();
+        const storedQuoteData = localStorage.getItem('quoteData');
+        const storedDate = localStorage.getItem('quoteDate');
 
-    fetch('/api/quote')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Error: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => setQuoteData(data))
-        .catch(error => {
-            console.error('Error fetching the quote:', error);
-            setError(error.message);
-        });
+        if (storedQuoteData && storedDate === today) {
+            // Use the stored quote if it was fetched today
+            setQuoteData(JSON.parse(storedQuoteData));
+        } else {
+            // Fetch a new quote and update localStorage
+            fetch('/api/quote')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Error: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    setQuoteData(data);
+                    localStorage.setItem('quoteData', JSON.stringify(data));
+                    localStorage.setItem('quoteDate', today);
+                })
+                .catch(error => {
+                    console.error('Error fetching the quote:', error);
+                    setError(error.message);
+                });
+        }
+    }, []);
 
     if (error) {
         return <div>Error loading quote: {error}</div>;

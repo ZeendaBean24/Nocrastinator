@@ -14,6 +14,7 @@ app.get('/api/quote', async (req, res) => {
     const randomCategory = categories[Math.floor(Math.random() * categories.length)];
     try {
         const response = await fetch(`https://api.api-ninjas.com/v1/quotes?category=${randomCategory}`, {
+            // mode: 'use-cors',
             headers: { 'X-Api-Key': process.env.API_KEY }
         });
 

@@ -18,6 +18,7 @@ import QuoteDisplay from './Components/Quotes';
 // FIX LOGO PROBLEM
 // Use different account for backend api keys for different one: openweatherapi, unsplash, apininjas
 // limit to 24 hours 
+// why are there 2 requests every time a new quote is generated
 
 function App() {
 
