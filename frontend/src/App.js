@@ -19,6 +19,7 @@ import QuoteDisplay from './Components/Quotes';
 // FIX LOGO PROBLEM
 // Use different account for backend api keys for different one: openweatherapi, unsplash, apininjas
 // Add more categories for ninja api / limit to 24 hours 
+// ENV files on backend
 
 function App() {
 
