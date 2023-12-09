@@ -8,6 +8,7 @@ import SettingsContext from './Components/PomodoroTimer/SettingsPage/SettingsCon
 import Greeting from './Components/Greeting';
 import QuickLinks from './Components/QuickLinks';
 import fetchBackgroundImage from './Components/BackgroundImage';
+import QuoteDisplay from './Components/Quotes';
 
 // Weather app: responsive auto skip, auto detect
 // Pomodoro timer: bugs fixes, alert the user
@@ -16,6 +17,8 @@ import fetchBackgroundImage from './Components/BackgroundImage';
 // How to overflow text into side divs
 // USE BACKEND; ADD LINKS AND STORE IT IN DATABASE FOR QUICK LINKS
 // FIX LOGO PROBLEM
+// Use different account for backend api keys for different one: openweatherapi, unsplash, apininjas
+// Add more categories for ninja api / limit to 24 hours 
 
 function App() {
 
@@ -68,18 +71,23 @@ function App() {
             {showSettings ? <Settings /> : <Timer />}
           </SettingsContext.Provider>
         </div>
-        <div className="item item-2">
+        <div className="item item-2"> 
           {/* Greeting */}
           <Greeting />
           {/* Clock */}
-          <Clock />
+          <Clock /> 
         </div>
         <div className='item item-3'>
           {/* Weather */}
           <WeatherApp />
         </div>
         <div className='item item-4'>
+          {/* Quick Links */}
           <QuickLinks links={links} />
+        </div>
+        <div className='item item-5'>
+          {/* Quick Links */}
+          <QuoteDisplay />
         </div>
       </div>
     </div>
