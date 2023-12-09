@@ -15,11 +15,9 @@ import QuoteDisplay from './Components/Quotes';
 // Greeting: update using state
 // Naming best practices
 // How to overflow text into side divs
-// USE BACKEND; ADD LINKS AND STORE IT IN DATABASE FOR QUICK LINKS
 // FIX LOGO PROBLEM
 // Use different account for backend api keys for different one: openweatherapi, unsplash, apininjas
-// Add more categories for ninja api / limit to 24 hours 
-// ENV files on backend
+// limit to 24 hours 
 
 function App() {
 
