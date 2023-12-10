@@ -8,7 +8,7 @@ app.use(cors());
 
 app.use(express.json());
 
-const categories = ['age', 'alone', 'attitude', 'change', 'courage', 'death', 'dreams', 'equality', 'experience', 'failure', 'faith', 'fear', 'fitness', 'forgiveness', 'freedom', 'friendship', 'happiness', 'health', 'hope', 'imagination', 'leadership', 'love', 'life', 'money', 'success'];
+const categories = ['age', 'attitude', 'change', 'courage', 'death', 'dreams', 'equality', 'experience', 'failure', 'faith', 'fear', 'fitness', 'forgiveness', 'freedom', 'friendship', 'happiness', 'health', 'hope', 'imagination', 'leadership', 'love', 'life', 'money', 'success'];
 
 app.get('/api/quote', async (req, res) => {
     const randomCategory = categories[Math.floor(Math.random() * categories.length)];

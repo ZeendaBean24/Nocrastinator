@@ -9,6 +9,7 @@ import Greeting from './Components/Greeting';
 import QuickLinks from './Components/QuickLinks';
 import fetchBackgroundImage from './Components/BackgroundImage';
 import QuoteDisplay from './Components/Quotes';
+import DailyWord from './Components/DailyWord';
 
 // Weather app: responsive auto skip, auto detect
 // Pomodoro timer: bugs fixes, alert the user
@@ -18,7 +19,6 @@ import QuoteDisplay from './Components/Quotes';
 // FIX LOGO PROBLEM
 // Use different account for backend api keys for different one: openweatherapi, unsplash, apininjas
 // limit to 24 hours 
-// why are there 2 requests every time a new quote is generated
 
 function App() {
 
@@ -86,8 +86,12 @@ function App() {
           <QuickLinks links={links} />
         </div>
         <div className='item item-5'>
-          {/* Quick Links */}
+          {/* Quote of the Day */}
           <QuoteDisplay />
+        </div>
+        <div className='item item-6'>
+          {/* Word of the Day*/}
+          <DailyWord />
         </div>
       </div>
     </div>

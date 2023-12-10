@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { WeatherContainer, TopBar, CityInput, SearchIcon, WeatherImage, WeatherTemp, WeatherLocation, DataContainer, HumidityElement, WindElement, WeatherData, HumidityPercent, WeatherText, WeatherIcon, WindRate } from './styles'
 
 import search_icon from '../../assets/search.png'
@@ -21,6 +21,58 @@ function WeatherApp() {
     const [locationVal, setLocationVal] = useState("");
 
     const [wicon, setWicon] = useState(cloud_icon);
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const { latitude, longitude } = position.coords;
+            fetchWeatherDataByLocation(latitude, longitude);
+        }, (error) => {
+            console.error("Error getting location: ", error);
+        });
+    }, []);
+
+    const fetchWeatherDataByLocation = async (lat, lon) => {
+        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=Metric&appid=${api_key}`;
+        let response = await fetch(url);
+        let data = await response.json();
+
+        setHumidityVal(Math.floor(data.main.humidity));
+        setWindVal(Math.floor(data.wind.speed));
+        setTemperatureVal(Math.floor(data.main.temp));
+        setLocationVal(data.name);
+
+        if(data.weather[0].icon==="01d" || data.weather[0].icon==="01n") {
+            setWicon(clear_icon);
+        }
+
+        else if (data.weather[0].icon==="02d" || data.weather[0].icon==="02n") {
+            setWicon(cloud_icon);
+        }
+
+        else if (data.weather[0].icon==="03d" || data.weather[0].icon==="03n") {
+            setWicon(drizzle_icon);
+        }
+
+        else if (data.weather[0].icon==="04d" || data.weather[0].icon==="04n") {
+            setWicon(drizzle_icon);
+        }
+
+        else if (data.weather[0].icon==="09d" || data.weather[0].icon==="09n") {
+            setWicon(rain_icon);
+        }
+
+        else if (data.weather[0].icon==="10d" || data.weather[0].icon==="10n") {
+            setWicon(rain_icon);
+        }
+
+        else if (data.weather[0].icon==="13d" || data.weather[0].icon==="13n") {
+            setWicon(snow_icon);
+        }
+
+        else {
+            setWicon(clear_icon);
+        }
+    };
 
     const handleSearch = event => {
         setInputVal(event.target.value)
@@ -75,11 +127,6 @@ function WeatherApp() {
             setWicon(clear_icon);
         }
     }
-
-        // console.log(data.main.humidity)
-        // console.log(data.wind.speed)
-        // console.log(data.main.temp)
-        // console.log(data.name)
 
   return (
     <WeatherContainer>
