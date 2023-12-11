@@ -7,7 +7,7 @@ import Settings from './Components/PomodoroTimer/SettingsPage/settings';
 import SettingsContext from './Components/PomodoroTimer/SettingsPage/SettingsContext';
 import Greeting from './Components/Greeting';
 import QuickLinks from './Components/QuickLinks';
-import fetchBackgroundImage from './Components/BackgroundImage';
+// import fetchBackgroundImage from './Components/BackgroundImage';
 import SVGNoiseFilter from './Components/BackgroundImage/styles';
 import QuoteDisplay from './Components/Quotes';
 import DailyWord from './Components/DailyWord';
@@ -26,31 +26,31 @@ function App() {
       // Add more links as needed
   ];
 
-  const [backgroundImageUrl, setBackgroundImageUrl] = useState('');
+  // const [backgroundImageUrl, setBackgroundImageUrl] = useState('');
 
-  useEffect(() => {
-    async function fetchImage() {
-      const imageUrl = await fetchBackgroundImage();
-      setBackgroundImageUrl(imageUrl);
-    }
-      fetchImage();
-    }, []);
+  // useEffect(() => {
+  //   async function fetchImage() {
+  //     const imageUrl = await fetchBackgroundImage();
+  //     setBackgroundImageUrl(imageUrl);
+  //   }
+  //     fetchImage();
+  //   }, []);
 
-  const backgroundStyle = {
-      backgroundImage: `url(${backgroundImageUrl})`,
-      backgroundSize: 'cover',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      zIndex: -1, // Ensure it's behind all other content
-      filter: 'url(#grainyNoise)', // Apply the SVG filter here
-    };
+  // const backgroundStyle = {
+  //     backgroundImage: `url(${backgroundImageUrl})`,
+  //     backgroundSize: 'cover',
+  //     position: 'absolute',
+  //     top: 0,
+  //     left: 0,
+  //     width: '100%',
+  //     height: '100%',
+  //     zIndex: -1, // Ensure it's behind all other content
+  //     filter: 'url(#grainyNoise)', // Apply the SVG filter here
+  //   };
 
   return (
     <>
-      <div style={backgroundStyle}>
+      <div>
         <SVGNoiseFilter />
       </div>
       <div className='App'>
