@@ -38,55 +38,61 @@ function App() {
 
   const backgroundStyle = {
       backgroundImage: `url(${backgroundImageUrl})`,
-      backgroundSize: 'cover', // This ensures the image covers the entire element
-      backgroundPosition: 'center', // This centers the image in the element
-      backgroundRepeat: 'no-repeat', // This prevents the image from repeating
-      minHeight: '100vh', // Ensure it covers the whole viewport height
-      minWidth: '100vw', // Ensure it covers the whole viewport width
-      filter: 'url(#grainyNoise)' // Apply the SVG filter here
+      backgroundSize: 'cover',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      zIndex: -1, // Ensure it's behind all other content
+      filter: 'url(#grainyNoise)', // Apply the SVG filter here
     };
 
   return (
-    <div className='App' style={backgroundStyle}>
-      <SVGNoiseFilter />
-      <div className="container" >
-        <div className="item item-1">
-          {/* Pomodoro Timer */}
-          <SettingsContext.Provider value={{
-            showSettings,
-            setShowSettings,
-            workMinutes,
-            breakMinutes,
-            setWorkMinutes,
-            setBreakMinutes,
-          }}>
-            {showSettings ? <Settings /> : <Timer />}
-          </SettingsContext.Provider>
-        </div>
-        <div className="item item-2"> 
-          {/* Greeting */}
-          <Greeting />
-          {/* Clock */}
-          <Clock /> 
-        </div>
-        <div className='item item-3'>
-          {/* Weather */}
-          <WeatherApp />
-        </div>
-        <div className='item item-4'>
-          {/* Quick Links */}
-          <QuickLinks links={links} />
-        </div>
-        <div className='item item-5'>
-          {/* Quote of the Day */}
-          <QuoteDisplay />
-        </div>
-        <div className='item item-6'>
-          {/* Word of the Day*/}
-          <DailyWord />
+    <>
+      <div style={backgroundStyle}>
+        <SVGNoiseFilter />
+      </div>
+      <div className='App'>
+        <div className="container">
+          <div className="item item-1">
+            {/* Pomodoro Timer */}
+            <SettingsContext.Provider value={{
+              showSettings,
+              setShowSettings,
+              workMinutes,
+              breakMinutes,
+              setWorkMinutes,
+              setBreakMinutes,
+            }}>
+              {showSettings ? <Settings /> : <Timer />}
+            </SettingsContext.Provider>
+          </div>
+          <div className="item item-2"> 
+            {/* Greeting */}
+            <Greeting />
+            {/* Clock */}
+            <Clock /> 
+          </div>
+          <div className='item item-3'>
+            {/* Weather */}
+            <WeatherApp />
+          </div>
+          <div className='item item-4'>
+            {/* Quick Links */}
+            <QuickLinks links={links} />
+          </div>
+          <div className='item item-5'>
+            {/* Quote of the Day */}
+            <QuoteDisplay />
+          </div>
+          <div className='item item-6'>
+            {/* Word of the Day*/}
+            <DailyWord />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
