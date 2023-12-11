@@ -96,3 +96,8 @@ main {
   grid-row: 1 / 2;
   grid-column: 1 / 6;
 }
+
+.item-7{
+  grid-row: 1 / 2;
+  grid-column: 1 / 6;
+}

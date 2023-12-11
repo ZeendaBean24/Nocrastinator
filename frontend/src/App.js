@@ -8,6 +8,7 @@ import SettingsContext from './Components/PomodoroTimer/SettingsPage/SettingsCon
 import Greeting from './Components/Greeting';
 import QuickLinks from './Components/QuickLinks';
 // import fetchBackgroundImage from './Components/BackgroundImage';
+import BackgroundColorPicker from './Components/BackgroundColor';
 import SVGNoiseFilter from './Components/BackgroundImage/styles';
 import QuoteDisplay from './Components/Quotes';
 import DailyWord from './Components/DailyWord';
@@ -17,6 +18,8 @@ function App() {
   const [showSettings, setShowSettings] = useState(false);
   const [workMinutes, setWorkMinutes] = useState(25);
   const [breakMinutes, setBreakMinutes] = useState(5);
+
+  const [selectedColor, setSelectedColor] = useState('');
 
   // Sample links data
   const links = [
@@ -50,10 +53,10 @@ function App() {
 
   return (
     <>
-      <div>
+      {/* <div>
         <SVGNoiseFilter />
-      </div>
-      <div className='App'>
+      </div> */}
+      <div className='App' style={{ backgroundColor: selectedColor }}>
         <div className="container">
           <div className="item item-1">
             {/* Pomodoro Timer */}
@@ -89,6 +92,9 @@ function App() {
           <div className='item item-6'>
             {/* Word of the Day*/}
             <DailyWord />
+          </div>
+          <div className='item item-7'>
+            <BackgroundColorPicker setSelectedColor={setSelectedColor} />
           </div>
         </div>
       </div>
