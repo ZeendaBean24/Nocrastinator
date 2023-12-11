@@ -53,9 +53,9 @@ function App() {
 
   return (
     <>
-      {/* <div>
+      <div>
         <SVGNoiseFilter />
-      </div> */}
+      </div>
       <div className='App' style={{ backgroundColor: selectedColor }}>
         <div className="container">
           <div className="item item-1">
