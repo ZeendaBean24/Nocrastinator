@@ -8,17 +8,9 @@ import SettingsContext from './Components/PomodoroTimer/SettingsPage/SettingsCon
 import Greeting from './Components/Greeting';
 import QuickLinks from './Components/QuickLinks';
 import fetchBackgroundImage from './Components/BackgroundImage';
+import SVGNoiseFilter from './Components/BackgroundImage/styles';
 import QuoteDisplay from './Components/Quotes';
 import DailyWord from './Components/DailyWord';
-
-// Weather app: responsive auto skip, auto detect
-// Pomodoro timer: bugs fixes, alert the user
-// Greeting: update using state
-// Naming best practices
-// How to overflow text into side divs
-// FIX LOGO PROBLEM
-// Use different account for backend api keys for different one: openweatherapi, unsplash, apininjas
-// limit to 24 hours 
 
 function App() {
 
@@ -51,12 +43,12 @@ function App() {
       backgroundRepeat: 'no-repeat', // This prevents the image from repeating
       minHeight: '100vh', // Ensure it covers the whole viewport height
       minWidth: '100vw', // Ensure it covers the whole viewport width
+      filter: 'url(#grainyNoise)' // Apply the SVG filter here
     };
-
-  console.log(backgroundImageUrl)
 
   return (
     <div className='App' style={backgroundStyle}>
+      <SVGNoiseFilter />
       <div className="container" >
         <div className="item item-1">
           {/* Pomodoro Timer */}
