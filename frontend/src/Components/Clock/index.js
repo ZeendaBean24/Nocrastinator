@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
-import { ClockContainer, ClockText } from './styles';
+import {
+    LightClockContainer,
+    LightClockText,
+    DarkClockContainer,
+    DarkClockText,
+  } from './styles';
 
-function Clock() {
+function Clock( theme ) {
     let time = new Date().toLocaleTimeString();
     const [currentTime, setCurrentTime] = useState(time);
 
@@ -13,9 +18,17 @@ function Clock() {
     setInterval(updateTime, 1000);
 
     return (
-    <ClockContainer>
-        <ClockText> {currentTime} </ClockText>
-    </ClockContainer>
+    <>
+      {theme === 'light' ? (
+        <LightClockContainer>
+          <LightClockText>{currentTime}</LightClockText>
+        </LightClockContainer>
+      ) : (
+        <DarkClockContainer>
+          <DarkClockText>{currentTime}</DarkClockText>
+        </DarkClockContainer>
+      )}
+    </>
   )
 }
 

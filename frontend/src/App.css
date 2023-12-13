@@ -42,14 +42,24 @@
   --green: #4aec8c;
 }
 
+
 .App {
   margin: 0;
   /* padding: 50px; */
-  background-color: black;
-  color: #eee;
   font-weight: 500;
   font-size: 1.2rem;
   height: 100vh;
+}
+
+/* Add this to your CSS file */
+.light {
+  background-color: powderblue; /* Light theme background color */
+  color: midnightblue; /* Text color for light theme */
+}
+
+.dark {
+  background-color: midnightblue; /* Dark theme background color */
+  color: powderblue; /* Text color for dark theme */
 }
 
 main {

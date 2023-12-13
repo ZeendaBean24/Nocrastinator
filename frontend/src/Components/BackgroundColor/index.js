@@ -1,24 +1,14 @@
 import React from 'react';
-import { ColorOptionsContainer, ColorOption, ColorHeading } from './styles';
+import { ColorOptionsContainer } from './styles';
 
-function BackgroundColorPicker({ setSelectedColor }) {
-  const colorOptions = ['lightblue', 'lightpink', 'lightgreen', 'lightyellow'];
-
-  const handleColorChange = (color) => {
-    setSelectedColor(color);
-  };
+function BackgroundColorPicker({ setSelectedColor, toggleTheme }) {
+  const themes = ['light', 'dark']; // Define available themes
 
   return (
     <div>
-      <ColorHeading>Select Background Color:</ColorHeading>
+      {/* <ColorHeading>Select Theme:</ColorHeading> */}
       <ColorOptionsContainer>
-        {colorOptions.map((color, index) => (
-          <ColorOption
-            key={index}
-            style={{ backgroundColor: color }}
-            onClick={() => handleColorChange(color)}
-          ></ColorOption>
-        ))}
+        <button onClick={toggleTheme}>Toggle Theme</button> {/* Theme toggle button */}
       </ColorOptionsContainer>
     </div>
   );

@@ -19,7 +19,11 @@ function App() {
   const [workMinutes, setWorkMinutes] = useState(25);
   const [breakMinutes, setBreakMinutes] = useState(5);
 
-  const [selectedColor, setSelectedColor] = useState('');
+  const [theme, setTheme] = useState('light'); // 'light' or 'dark'
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   // Sample links data
   const links = [
@@ -56,7 +60,7 @@ function App() {
       <div>
         <SVGNoiseFilter />
       </div>
-      <div className='App' style={{ backgroundColor: selectedColor }}>
+      <div className={`App ${theme}`}>
         <div className="container">
           <div className="item item-1">
             {/* Pomodoro Timer */}
@@ -75,7 +79,7 @@ function App() {
             {/* Greeting */}
             <Greeting />
             {/* Clock */}
-            <Clock /> 
+            <Clock theme={theme}/> 
           </div>
           <div className='item item-3'>
             {/* Weather */}
@@ -94,7 +98,7 @@ function App() {
             <DailyWord />
           </div>
           <div className='item item-7'>
-            <BackgroundColorPicker setSelectedColor={setSelectedColor} />
+            <BackgroundColorPicker setSelectedColor={setTheme} toggleTheme={toggleTheme} />
           </div>
         </div>
       </div>
