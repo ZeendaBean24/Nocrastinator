@@ -23,6 +23,7 @@ function App() {
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
+    console.log('Theme toggled:', theme);
   };
 
   // Sample links data

@@ -3,7 +3,6 @@ import styled from "styled-components";
 // Light theme styles
 export const LightClockContainer = styled.div`
   display: flex;
-  overflow: hidden;
   justify-content: center;
   align-items: center;
   width: 250px;
@@ -35,7 +34,6 @@ export const LightClockText = styled.h1`
 export const DarkClockContainer = styled.div`
   width: auto;
   height: 20vh;
-  overflow: hidden;
   text-align: center;
   background-color: midnightblue; /* Set dark theme background color */
 `;
@@ -47,6 +45,6 @@ export const DarkClockText = styled.h1`
   border-radius: 15px;
   padding: 10px 0;
   background-color: #333; /* Darker background for dark theme */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6); /* Shadow for dark theme */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6); 
   color: white; /* Text color for dark theme */
 `;

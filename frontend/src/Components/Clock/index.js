@@ -1,23 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import {
-    LightClockContainer,
-    LightClockText,
-    DarkClockContainer,
-    DarkClockText,
-  } from './styles';
+  LightClockContainer,
+  LightClockText,
+  DarkClockContainer,
+  DarkClockText,
+} from './styles';
 
-function Clock( theme ) {
+function Clock({ theme }) { // Destructure the theme prop correctly
+  let time = new Date().toLocaleTimeString();
+  const [currentTime, setCurrentTime] = useState(time);
+
+  const updateTime = () => {
     let time = new Date().toLocaleTimeString();
-    const [currentTime, setCurrentTime] = useState(time);
+    setCurrentTime(time);
+  }
 
-    const updateTime = () => {
-        let time = new Date().toLocaleTimeString();
-        setCurrentTime(time);
-    }
+  setInterval(updateTime, 1000);
 
-    setInterval(updateTime, 1000);
-
-    return (
+  return (
     <>
       {theme === 'light' ? (
         <LightClockContainer>
@@ -32,4 +32,4 @@ function Clock( theme ) {
   )
 }
 
-export default Clock
+export default Clock;
