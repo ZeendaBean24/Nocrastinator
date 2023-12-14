@@ -35,7 +35,7 @@ export const DarkClockContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: auto;
-  height: 20vh;
+  height: 10vh;
   border-radius: 50px;
   background-color: midnightblue;
   cursor: pointer;
@@ -58,12 +58,14 @@ export const DarkClockContainer = styled.div`
 `;
 
 export const DarkClockText = styled.h1`
-  border: 2px solid darkslategray;
-  width: 250px;
-  margin: 2vh auto 0px auto;
-  border-radius: 15px;
-  padding: 10px 0;
-  background-color: #333; /* Darker background for dark theme */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6); 
-  color: white; /* Text color for dark theme */
+  font-size: 3rem; /* Adjust the font size as needed */
+  color: powderblue; /* Text color is midnight blue */
+  text-align: center; /* Center-align the text horizontally */
+  padding: 20px; /* Add padding to the text for better appearance */
+  border-radius: 50px;
+  position: relative; /* Enable positioning */
+  text-shadow: 3px 5px 3px 
+            rgba(0, 0, 0, 0.5),  
+            -2px -2px 6px
+            rgba(255, 255, 255, 0.8)
 `;
