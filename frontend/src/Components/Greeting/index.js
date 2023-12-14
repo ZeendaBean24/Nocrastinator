@@ -1,7 +1,7 @@
 import React from 'react'
-import { GreetingContainer } from './styles';
+import {LightGreetingText, DarkGreetingText} from './styles';
 
-function Greeting() {
+function Greeting( {theme} ) {
   let timeOfDay;
   const date = new Date();
   const hours = date.getHours();
@@ -15,10 +15,14 @@ function Greeting() {
   }
 
   return (
-    <GreetingContainer>
-        Good {timeOfDay}!
-    </GreetingContainer>
+    <>
+    {theme === 'light' ? (
+        <LightGreetingText> Good {timeOfDay}! </LightGreetingText>
+    ) : (
+        <DarkGreetingText> Good {timeOfDay}! </DarkGreetingText>
+    )}
+  </>
   )
 }
 
-export default Greeting
+export default Greeting;

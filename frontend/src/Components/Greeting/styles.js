@@ -1,16 +1,34 @@
 import styled from "styled-components";
 
-export const GreetingContainer = styled.h1`
+export const LightGreetingText = styled.h1`
     text-align: center;
     word-wrap: break-word;
+    text-transform: uppercase;
     font-size: 6rem; /* Adjust the font size as needed */
-    color: midnightblue; /* Text color is midnight blue */
+    padding: 20px; /* Add padding to the text for better appearance */
+    border-radius: 50px;
+    background-color: midnightblue; /* Text color is midnight blue */
+    background-clip: text;
+    color: transparent;
+    text-shadow: rgba(225, 225, 225, 0.5) 
+                4px 6px 6px;
+
+
+`
+
+export const DarkGreetingText = styled.h1`
+    text-align: center;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    font-size: 6rem; /* Adjust the font size as needed */
+    color: powderblue; /* Text color is midnight blue */
     text-align: center; /* Center-align the text horizontally */
     padding: 20px; /* Add padding to the text for better appearance */
     border-radius: 50px;
-    position: relative; /* Enable positioning */
-    text-shadow: 2px 3px 6px 
-                rgba(0, 0, 0, 0.5),  
-                -2px -2px 0 
-                rgba(255, 255, 255, 0.8); 
+    background-color: powderblue; /* Text color is midnight blue */
+    background-clip: text;
+    color: transparent;
+    text-shadow: rgba(50, 50, 50, 0.5) 
+                4px 6px 6px;
 `
+

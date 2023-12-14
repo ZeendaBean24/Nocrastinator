@@ -78,7 +78,7 @@ function App() {
           </div>
           <div className="item item-2"> 
             {/* Greeting */}
-            <Greeting />
+            <Greeting theme={theme}/>
             {/* Clock */}
             <Clock theme={theme}/> 
           </div>
