@@ -5,7 +5,7 @@ export const LightClockContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto;
+  width: 20vw;
   height: 10vh;
   border-radius: 50px;
   background-color: powderblue;
@@ -14,6 +14,7 @@ export const LightClockContainer = styled.div`
       inset 15px 15px 10px rgba(255, 255, 255, 0.75),
       -15px -15px 35px rgba(255, 255, 255, 0.55),
       inset -1px -1px 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto; /* Center the container horizontally */
 `;
 
 export const LightClockText = styled.h1`
@@ -34,7 +35,7 @@ export const DarkClockContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto;
+  width: 20vw;
   height: 10vh;
   border-radius: 50px;
   background-color: midnightblue;
@@ -42,6 +43,7 @@ export const DarkClockContainer = styled.div`
   box-shadow:
     15px 25px 20px rgba(0, 0, 0, 0.2), /* Outer shadow */
     -10px -10px 20px rgba(255, 255, 255, 0.1); /* Inner shadow */
+    margin: 0 auto; /* Center the container horizontally */
 
   &:before {
     content: '';
