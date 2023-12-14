@@ -28,7 +28,7 @@ export const DarkGreetingText = styled.h1`
     background-color: powderblue; /* Text color is midnight blue */
     background-clip: text;
     color: transparent;
-    text-shadow: rgba(50, 50, 50, 0.5) 
+    text-shadow: rgba(255, 255, 255, 0.5) 
                 4px 6px 6px;
 `
 
