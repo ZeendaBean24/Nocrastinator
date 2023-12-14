@@ -18,7 +18,7 @@ export const LightClockContainer = styled.div`
 `;
 
 export const LightClockText = styled.h1`
-  font-size: 3rem; /* Adjust the font size as needed */
+  font-size: 1.5rem; /* Adjust the font size as needed */
   color: midnightblue; /* Text color is midnight blue */
   text-align: center; /* Center-align the text horizontally */
   padding: 20px; /* Add padding to the text for better appearance */
@@ -59,7 +59,7 @@ export const DarkClockContainer = styled.div`
 `;
 
 export const DarkClockText = styled.h1`
-  font-size: 3rem; /* Adjust the font size as needed */
+  font-size: 1.5rem; /* Adjust the font size as needed */
   color: powderblue; /* Text color is midnight blue */
   text-align: center; /* Center-align the text horizontally */
   padding: 20px; /* Add padding to the text for better appearance */
