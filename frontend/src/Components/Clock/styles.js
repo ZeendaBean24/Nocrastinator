@@ -38,10 +38,9 @@ export const DarkClockContainer = styled.div`
   height: 10vh;
   border-radius: 50px;
   background-color: midnightblue;
-  cursor: pointer;
   position: relative;
   box-shadow:
-    10px 10px 20px rgba(0, 0, 0, 0.2), /* Outer shadow */
+    15px 25px 20px rgba(0, 0, 0, 0.2), /* Outer shadow */
     -10px -10px 20px rgba(255, 255, 255, 0.1); /* Inner shadow */
 
   &:before {
