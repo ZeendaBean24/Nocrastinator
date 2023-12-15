@@ -21,9 +21,8 @@ function App() {
 
   const [theme, setTheme] = useState('light'); // 'light' or 'dark'
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-    console.log('Theme toggled:', theme);
+  const handleModeChange = (mode) => {
+    setTheme(mode); // Update the selectedTheme based on the detected mode
   };
 
   // Sample links data
@@ -99,7 +98,10 @@ function App() {
             <DailyWord />
           </div>
           <div className='item item-7'>
-            <BackgroundColorPicker setSelectedColor={setTheme} toggleTheme={toggleTheme} />
+          <BackgroundColorPicker
+            theme={theme}
+            setTheme={handleModeChange} // Pass the handleModeChange function to update the mode
+          />
           </div>
         </div>
       </div>

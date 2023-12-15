@@ -1,16 +1,32 @@
 import React from 'react';
-import { ColorOptionsContainer } from './styles';
+import { ColorOptionsContainer, ThemeLabel, ColorInput } from './styles';
 
-function BackgroundColorPicker({ setSelectedColor, toggleTheme }) {
-  const themes = ['light', 'dark']; // Define available themes
+function BackgroundColorPicker({ theme, setTheme }) {
+  const handleThemeChange = (theme) => {
+    setTheme(theme);
+  };
 
   return (
-    <div>
-      {/* <ColorHeading>Select Theme:</ColorHeading> */}
-      <ColorOptionsContainer>
-        <button onClick={toggleTheme}>Toggle Theme</button> {/* Theme toggle button */}
-      </ColorOptionsContainer>
-    </div>
+    <ColorOptionsContainer>
+      <ThemeLabel>
+        <ColorInput
+          type="radio"
+          value="light"
+          checked={theme === 'light'}
+          onChange={() => handleThemeChange('light')}
+        />
+        Light Mode
+      </ThemeLabel>
+      <ThemeLabel>
+        <ColorInput
+          type="radio"
+          value="dark"
+          checked={theme === 'dark'}
+          onChange={() => handleThemeChange('dark')}
+        />
+        Dark Mode
+      </ThemeLabel>
+    </ColorOptionsContainer>
   );
 }
 
