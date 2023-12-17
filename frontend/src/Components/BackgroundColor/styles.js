@@ -27,8 +27,8 @@ export const DarkColorOptionsButton = styled.button`
   box-shadow:
   -10px -10px 15px rgba(255,255,255,0.5),
   10px 10px 15px rgba(70,70,70,0.12),
-  inset -10px -10px 15px rgba(255,255,255,0.5),
-  inset 10px 10px 15px rgba(70,70,70,0.12);
+  inset -10px -10px 10px rgba(255,255,255,0.5),
+  inset 10px 10px 10px rgba(70,70,70,0.12);
   position: absolute;
   border-radius: 50%;
   border: 8px solid #ececec;
@@ -36,11 +36,11 @@ export const DarkColorOptionsButton = styled.button`
 `
 
 export const LightPowerSVG = styled.svg`
-  color: #7a7a7a;
+  fill: none;
 `
 
 export const DarkPowerSVG = styled.svg`
-  color: #15e38a;
+  fill: none;
 `
 
 
