@@ -21,8 +21,8 @@ function App() {
 
   const [theme, setTheme] = useState('light'); // 'light' or 'dark'
 
-  const handleModeChange = (mode) => {
-    setTheme(mode); // Update the selectedTheme based on the detected mode
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   // Sample links data
@@ -98,10 +98,8 @@ function App() {
             <DailyWord />
           </div>
           <div className='item item-7'>
-          <BackgroundColorPicker
-            theme={theme}
-            setTheme={handleModeChange} // Pass the handleModeChange function to update the mode
-          />
+            {/* Toggle Switch for Light/Dark Mode */}
+            <BackgroundColorPicker setSelectedColor={setTheme} toggleTheme={toggleTheme} />
           </div>
         </div>
       </div>
