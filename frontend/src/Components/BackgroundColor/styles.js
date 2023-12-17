@@ -7,6 +7,44 @@ export const ColorOptionsContainer = styled.div`
   text-align: center;
 `;
 
+export const LightColorOptionsButton = styled.button`
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  box-shadow:
+  -10px -10px 15px rgba(255,255,255,0.5),
+  10px 10px 15px rgba(70,70,70,0.12);
+  position: absolute;
+  border-radius: 50%;
+  border: 8px solid #ececec;
+  outline: none;
+`
+
+export const DarkColorOptionsButton = styled.button`
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  box-shadow:
+  -10px -10px 15px rgba(255,255,255,0.5),
+  10px 10px 15px rgba(70,70,70,0.12),
+  inset -10px -10px 15px rgba(255,255,255,0.5),
+  inset 10px 10px 15px rgba(70,70,70,0.12);
+  position: absolute;
+  border-radius: 50%;
+  border: 8px solid #ececec;
+  outline: none;
+`
+
+export const LightPowerSVG = styled.svg`
+  color: #7a7a7a;
+`
+
+export const DarkPowerSVG = styled.svg`
+  color: #15e38a;
+`
+
+
+
 // export const ColorOption = styled.div`
 //   width: 40px;
 //   height: 40px;

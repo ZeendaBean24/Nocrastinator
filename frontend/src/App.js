@@ -99,7 +99,7 @@ function App() {
           </div>
           <div className='item item-7'>
             {/* Toggle Switch for Light/Dark Mode */}
-            <BackgroundColorPicker setSelectedColor={setTheme} toggleTheme={toggleTheme} />
+            <BackgroundColorPicker toggleTheme={toggleTheme} theme={theme}/>
           </div>
         </div>
       </div>
