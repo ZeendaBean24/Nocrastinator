@@ -133,7 +133,7 @@ function WeatherApp() {
         <TopBar>
             <CityInput type="text" value={inputVal} onChange={handleSearch}/>
             <SearchIcon onClick={() => {Search()}}>
-                <img src={search_icon} alt=""/>
+                <img src={search_icon} alt="" style={{ width: "0.8em", height: "0.8em" }}/>
             </SearchIcon>
         </TopBar>
         <WeatherImage>

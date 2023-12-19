@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const WeatherContainer = styled.div`
     width: 150px;
     height: 235px;
-    margin: auto;
     font-size: 12px;
     margin-top: 1.25em; /* Adjusted margin in em */
     border-radius: 12px;
