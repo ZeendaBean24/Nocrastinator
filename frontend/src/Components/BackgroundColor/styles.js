@@ -23,9 +23,9 @@ export const LightColorOptionsButton = styled.button`
     inset -5px -5px 10px rgba(255, 255, 255, 0.7),
     inset 5px 5px 10px rgba(0, 0, 0, 0.2);
 
-  &:hover {
+  /* &:hover {
     transform: translateY(-5px);
-  }
+  } */
 `;
 
 export const DarkColorOptionsButton = styled.button`
@@ -45,9 +45,9 @@ export const DarkColorOptionsButton = styled.button`
     inset -5px -5px 10px rgba(80, 80, 80, 0.7),
     inset 5px 5px 10px rgba(0, 0, 0, 0.2);
 
-  &:hover {
+  /* &:hover {
     transform: translateY(-5px);
-  }
+  } */
 `;
 
 export const LightPowerSVG = styled.svg`
@@ -56,5 +56,7 @@ export const LightPowerSVG = styled.svg`
 
 export const DarkPowerSVG = styled.svg`
   fill: none;
-  filter: drop-shadow(0 0 5px rgba(21,227,138, 0.8)); 
+  filter: drop-shadow(
+          0 0 3.5px rgba(21,227,138, 0.8)
+          ); 
 `;
