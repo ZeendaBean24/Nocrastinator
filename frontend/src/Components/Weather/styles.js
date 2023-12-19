@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const WeatherContainer = styled.div`
-    width: 150px;
-    height: 235px;
+    width: 9.375rem;
+    height: 14.6875rem;
     font-size: 12px;
     margin-top: 1.25em; /* Adjusted margin in em */
     border-radius: 12px;
