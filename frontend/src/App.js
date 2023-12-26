@@ -15,9 +15,9 @@ import DailyWord from './Components/DailyWord';
 
 function App() {
 
-  const [showSettings, setShowSettings] = useState(false);
-  const [workMinutes, setWorkMinutes] = useState(25);
-  const [breakMinutes, setBreakMinutes] = useState(5);
+  // const [showSettings, setShowSettings] = useState(false);
+  // const [workMinutes, setWorkMinutes] = useState(25);
+  // const [breakMinutes, setBreakMinutes] = useState(5);
 
   const [theme, setTheme] = useState('light'); // 'light' or 'dark'
 
