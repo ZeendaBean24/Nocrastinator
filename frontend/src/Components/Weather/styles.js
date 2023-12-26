@@ -48,7 +48,6 @@ export const CityInput = styled.input`
     color: #003366; // Midnight blue color
     font-size: 0.875em;
     font-weight: 400;
-    ${textShadow}
     ${neumorphicShadow}
 `;
 
