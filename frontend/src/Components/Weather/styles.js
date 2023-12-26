@@ -26,7 +26,7 @@ export const WeatherContainer = styled.div`
     margin-top: 1.25em;
     border-radius: 12px;
     background: #e0e5ec; // Light blueish-grey for neumorphic background
-    ${neumorphicShadowDark}
+    ${({ theme }) => theme === 'dark' ? neumorphicShadowDark : neumorphicShadow}
 `;
 
 export const TopBar = styled.div`

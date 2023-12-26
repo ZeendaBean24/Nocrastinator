@@ -8,7 +8,7 @@ import drizzle_icon from '../../assets/drizzle.png'
 import rain_icon from '../../assets/rain.png'
 import snow_icon from '../../assets/snow.png'
 
-function WeatherApp() {
+function WeatherApp( {theme} ) {
 
     let api_key = "d62fe492c4fd25f79c87d04370f71889";
     const [inputVal, setInputVal] = useState("");
@@ -127,7 +127,7 @@ function WeatherApp() {
     }
 
   return (
-    <WeatherContainer>
+    <WeatherContainer theme={theme}>
         <TopBar>
             <CityInput type="text" value={inputVal} onChange={handleSearch}/>
             <SearchIcon onClick={() => {Search()}}>

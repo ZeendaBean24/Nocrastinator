@@ -70,7 +70,7 @@ function App() {
           </div>
           <div className='item item-3'>
             {/* Weather */}
-            <WeatherApp />
+            <WeatherApp theme={theme}/>
           </div>
           <div className='item item-4'>
             {/* Quick Links */}
