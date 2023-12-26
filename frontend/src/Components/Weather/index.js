@@ -10,7 +10,7 @@ import snow_icon from '../../assets/snow.png'
 
 function WeatherApp( {theme} ) {
 
-    let api_key = process.env.REACT_APP_API_KEY;
+    const api_key = process.env.REACT_APP_API_KEY;
     const [inputVal, setInputVal] = useState("");
 
     const [humidityVal, setHumidityVal] = useState("");
