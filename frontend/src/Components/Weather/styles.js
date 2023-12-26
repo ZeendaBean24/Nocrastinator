@@ -6,6 +6,12 @@ const neumorphicShadow = `
     -8px -8px 15px #ffffff; // Lighter shadow on the opposite side
 `;
 
+const neumorphicShadowDark = `
+  box-shadow: 
+    10px 10px 20px #000033, // Deeper and darker shadow for depth
+    -5px -5px 20px #ffffff; // Lighter and more contrasting shadow for raised effect
+`;
+
 const textShadow = `
   text-shadow:
     1px 1px 2px #003366, // Black shadow for depth
@@ -20,7 +26,7 @@ export const WeatherContainer = styled.div`
     margin-top: 1.25em;
     border-radius: 12px;
     background: #e0e5ec; // Light blueish-grey for neumorphic background
-    ${neumorphicShadow}
+    ${neumorphicShadowDark}
 `;
 
 export const TopBar = styled.div`
