@@ -143,8 +143,7 @@ export const WeatherText = styled.div`
     ${textShadow}
 `;
 
-export const WeatherIcon = styled.img`
+export const WeatherIcon = styled.svg`
     margin-top: 0.625em;
     width: 1.5625em;
-    // Add neumorphic effect if the icon needs it
 `;
