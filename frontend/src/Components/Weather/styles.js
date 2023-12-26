@@ -144,6 +144,8 @@ export const WeatherText = styled.div`
 `;
 
 export const WeatherIcon = styled.svg`
-    margin-top: 0.625em;
-    width: 1.5625em;
+    margin-top: 0.125em;
+    width: 1.8625em;
+    /* stroke: #003366;
+    stroke-width: 0.01em; */
 `;
