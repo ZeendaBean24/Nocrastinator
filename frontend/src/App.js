@@ -2,9 +2,9 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import Clock from './Components/Clock';
 import WeatherApp from './Components/Weather';
-import Timer from './Components/PomodoroTimer';
-import Settings from './Components/PomodoroTimer/SettingsPage/settings';
-import SettingsContext from './Components/PomodoroTimer/SettingsPage/SettingsContext';
+// import Timer from './Components/PomodoroTimer';
+// import Settings from './Components/PomodoroTimer/SettingsPage/settings';
+// import SettingsContext from './Components/PomodoroTimer/SettingsPage/SettingsContext';
 import Greeting from './Components/Greeting';
 import QuickLinks from './Components/QuickLinks';
 // import fetchBackgroundImage from './Components/BackgroundImage';
@@ -62,19 +62,6 @@ function App() {
       </div>
       <div className={`App ${theme}`}>
         <div className="container">
-          <div className="item item-1">
-            {/* Pomodoro Timer */}
-            <SettingsContext.Provider value={{
-              showSettings,
-              setShowSettings,
-              workMinutes,
-              breakMinutes,
-              setWorkMinutes,
-              setBreakMinutes,
-            }}>
-              {showSettings ? <Settings /> : <Timer />}
-            </SettingsContext.Provider>
-          </div>
           <div className="item item-2"> 
             {/* Greeting */}
             <Greeting theme={theme}/>
