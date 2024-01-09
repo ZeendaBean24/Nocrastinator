@@ -32,14 +32,35 @@ app.get('/api/quote', async (req, res) => {
 
 app.get('/wordOfTheDay', async (req, res) => {
     const apiKey = process.env.WORDNIK_API_KEY;
-    const apiUrl = `http://api.wordnik.com/v4/words.json/wordOfTheDay?api_key=${apiKey}`;
+    const wordOfTheDayUrl = `http://api.wordnik.com/v4/words.json/wordOfTheDay?api_key=${apiKey}`;
 
     try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        res.json(data);
+        const wordResponse = await fetch(wordOfTheDayUrl);
+        const wordData = await wordResponse.json();
+        const word = wordData.word;
+
+        // You may need to adjust these URLs depending on the actual Wordnik API endpoints
+        const definitionUrl = `http://api.wordnik.com/v4/word.json/${word}/definitions?api_key=${apiKey}`;
+        const exampleUrl = `http://api.wordnik.com/v4/word.json/${word}/examples?api_key=${apiKey}`;
+
+        const [definitionResponse, exampleResponse] = await Promise.all([
+            fetch(definitionUrl),
+            fetch(exampleUrl)
+        ]);
+
+        const [definitions, examples] = await Promise.all([
+            definitionResponse.json(),
+            exampleResponse.json()
+        ]);
+
+        res.json({
+            word,
+            definition: definitions.length > 0 ? definitions[0].text : "No definition available",
+            example: examples.examples.length > 0 ? examples.examples[0].text : "No example available",
+            partOfSpeech: definitions.length > 0 ? definitions[0].partOfSpeech : "N/A"
+        });
     } catch (error) {
-        res.status(500).json({ message: 'Error fetching word of the day' });
+        res.status(500).json({ message: 'Error fetching word of the day details', error });
     }
 });
 
