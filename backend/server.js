@@ -30,6 +30,19 @@ app.get('/api/quote', async (req, res) => {
     }
 });
 
+app.get('/wordOfTheDay', async (req, res) => {
+    const apiKey = process.env.WORDNIK_API_KEY;
+    const apiUrl = `http://api.wordnik.com/v4/words.json/wordOfTheDay?api_key=${apiKey}`;
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching word of the day' });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
