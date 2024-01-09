@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Title, Word } from './styles.js'; // Import styled components
+import { Container, Title, Word, Definition, Example, PartOfSpeech } from './styles.js';
 
 function DailyWord() {
-    const [word, setWord] = useState('');
+    const [wordDetails, setWordDetails] = useState({
+        word: '',
+        definition: '',
+        example: '',
+        partOfSpeech: ''
+    });
 
     useEffect(() => {
         const apiUrl = `http://localhost:3001/wordOfTheDay`;
@@ -10,17 +15,22 @@ function DailyWord() {
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
-                if (data.word) {
-                    setWord(data.word);
-                }
+                setWordDetails({
+                    word: data.word,
+                    definition: data.definition,
+                    example: data.example,
+                    partOfSpeech: data.partOfSpeech
+                });
             })
             .catch(error => console.error('Error fetching word of the day:', error));
     }, []);
 
     return (
         <Container>
-            <Title>Word of the Day</Title>
-            <Word>{word}</Word>
+            <Title>{wordDetails.word}</Title>
+            <Definition>{wordDetails.definition}</Definition>
+            <Example>{wordDetails.example}</Example>
+            <PartOfSpeech>{wordDetails.partOfSpeech}</PartOfSpeech>
         </Container>
     );
 }

@@ -14,3 +14,15 @@ export const Word = styled.p`
     font-size: 20px;
     color: #666;
 `;
+
+export const Definition = styled.p`
+    // your styles
+`;
+
+export const Example = styled.p`
+    // your styles
+`;
+
+export const PartOfSpeech = styled.p`
+    // your styles
+`;
