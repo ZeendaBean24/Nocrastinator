@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Title, Word, Definition, Example, PartOfSpeech } from './styles.js';
+import { Container, Title, Definition, Example, PartOfSpeech } from './styles.js';
 
 function DailyWord() {
     const [wordDetails, setWordDetails] = useState({

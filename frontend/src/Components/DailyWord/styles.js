@@ -7,10 +7,6 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-    color: #333;
-`;
-
-export const Word = styled.p`
     font-size: 20px;
     color: #666;
 `;
