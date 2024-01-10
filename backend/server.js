@@ -37,27 +37,24 @@ app.get('/wordOfTheDay', async (req, res) => {
     try {
         const wordResponse = await fetch(wordOfTheDayUrl);
         const wordData = await wordResponse.json();
+
+        // Extract the word, a single definition, and a single example
         const word = wordData.word;
-
-        // You may need to adjust these URLs depending on the actual Wordnik API endpoints
-        const definitionUrl = `http://api.wordnik.com/v4/word.json/${word}/definitions?api_key=${apiKey}`;
-        const exampleUrl = `http://api.wordnik.com/v4/word.json/${word}/examples?api_key=${apiKey}`;
-
-        const [definitionResponse, exampleResponse] = await Promise.all([
-            fetch(definitionUrl),
-            fetch(exampleUrl)
-        ]);
-
-        const [definitions, examples] = await Promise.all([
-            definitionResponse.json(),
-            exampleResponse.json()
-        ]);
+        const singleDefinition = wordData.definitions && wordData.definitions.length > 0 
+                                 ? wordData.definitions[0].text 
+                                 : "No definition available";
+        const singleExample = wordData.examples && wordData.examples.length > 0 
+                              ? wordData.examples[0].text 
+                              : "No example available";
+        const partOfSpeech = wordData.definitions && wordData.definitions.length > 0 
+                             ? wordData.definitions[0].partOfSpeech 
+                             : "N/A";
 
         res.json({
             word,
-            definition: definitions.length > 0 ? definitions[0].text : "No definition available",
-            example: examples.examples.length > 0 ? examples.examples[0].text : "No example available",
-            partOfSpeech: definitions.length > 0 ? definitions[0].partOfSpeech : "N/A"
+            definition: singleDefinition,
+            example: singleExample,
+            partOfSpeech
         });
     } catch (error) {
         res.status(500).json({ message: 'Error fetching word of the day details', error });
