@@ -62,9 +62,11 @@ function App() {
       </div>
       <div className={`App ${theme}`}>
         <div className="container">
-          <div className="item item-2"> 
+          <div className='item item-1'>
             {/* Greeting */}
             <Greeting theme={theme}/>
+          </div>
+          <div className="item item-2"> 
             {/* Clock */}
             <Clock theme={theme}/> 
           </div>
