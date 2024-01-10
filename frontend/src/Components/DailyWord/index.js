@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Title, Definition, Example, PartOfSpeech } from './styles.js';
+import { Container, Title, Definition, Example, PartOfSpeech, InfoContainer } from './styles.js';
 
 function DailyWord() {
     const [wordDetails, setWordDetails] = useState({
@@ -27,10 +27,12 @@ function DailyWord() {
 
     return (
       <Container>
-        <Title>{wordDetails.word} <PartOfSpeech>({wordDetails.partOfSpeech})</PartOfSpeech></Title>
-        <Definition>{wordDetails.definition}</Definition>
-        <Example>“{wordDetails.example}”</Example>
-      </Container>
+            <Title>{wordDetails.word} <PartOfSpeech>({wordDetails.partOfSpeech})</PartOfSpeech></Title>
+            <InfoContainer>
+                <Definition>{wordDetails.definition}</Definition>
+                <Example>“{wordDetails.example}”</Example>
+            </InfoContainer>
+        </Container>
     );
 }
 
