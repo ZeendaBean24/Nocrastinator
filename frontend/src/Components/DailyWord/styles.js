@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const LightContainer = styled.div`
-    padding-top: 25px;
+    padding-top: 20px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -28,7 +28,10 @@ export const LightInfoContainer = styled.div`
     box-shadow:
         inset 4px 4px 8px rgba(0, 0, 0, 0.25), // Darker shadow for depth
         inset -4px -4px 8px rgba(255, 255, 255, 0.7); // Lighter shadow for raised effect
-    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-radius: 40px;
     margin-top: 7px;
     margin-bottom: 10px;
@@ -60,7 +63,7 @@ export const LightPartOfSpeech = styled.span`
 `;
 
 export const DarkContainer = styled.div`
-    padding-top: 25px;
+    padding-top: 13px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -84,10 +87,14 @@ export const DarkInfoContainer = styled.div`
     font-size: 15px;
     background-color: midnightblue; // Same color as the Container for smooth transition
     box-shadow:
-        inset 4px 4px 8px rgba(0, 0, 0, 0.25), // Darker shadow for depth
-        inset -4px -4px 8px rgba(255, 255, 255, 0.7); // Lighter shadow for raised effect
+        inset 0px 0px 8px rgba(0, 0, 0, 0.5), // Darker shadow for depth
+        inset 0px 0px 8px rgba(255, 255, 255, 0.3); // Lighter shadow for raised effect
     padding: 5px;
     border-radius: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin-top: 7px;
     margin-bottom: 10px;
     margin-left: 30px;
