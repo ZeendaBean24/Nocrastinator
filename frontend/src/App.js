@@ -84,7 +84,7 @@ function App() {
           </div>
           <div className='item item-6'>
             {/* Word of the Day*/}
-            <DailyWord />
+            <DailyWord theme={theme}/>
           </div>
           <div className='item item-7'>
             {/* Toggle Switch for Light/Dark Mode */}

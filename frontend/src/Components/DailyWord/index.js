@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Title, Definition, Example, PartOfSpeech, InfoContainer } from './styles.js';
+import { LightContainer, LightTitle, LightDefinition, LightExample, LightPartOfSpeech, LightInfoContainer, DarkContainer, DarkTitle, DarkDefinition, DarkExample, DarkPartOfSpeech, DarkInfoContainer  } from './styles.js';
 
-function DailyWord() {
+function DailyWord( {theme} ) {
     const [wordDetails, setWordDetails] = useState({
         word: '',
         definition: '',
@@ -26,13 +26,26 @@ function DailyWord() {
     }, []);
 
     return (
-      <Container>
-            <Title>{wordDetails.word} <PartOfSpeech>({wordDetails.partOfSpeech})</PartOfSpeech></Title>
-            <InfoContainer>
-                <Definition>{wordDetails.definition}</Definition>
-                <Example>“{wordDetails.example}”</Example>
-            </InfoContainer>
-        </Container>
+        <>
+        {theme === 'light' ? (
+          <LightContainer>
+            <LightTitle>{wordDetails.word} <LightPartOfSpeech>({wordDetails.partOfSpeech})</LightPartOfSpeech></LightTitle>
+            <LightInfoContainer>
+                <LightDefinition>{wordDetails.definition}</LightDefinition>
+                <LightExample>“{wordDetails.example}”</LightExample>
+            </LightInfoContainer>
+          </LightContainer>
+        ) : (
+          <DarkContainer>
+            <DarkTitle>{wordDetails.word} <DarkPartOfSpeech>({wordDetails.partOfSpeech})</DarkPartOfSpeech></DarkTitle>
+            <DarkInfoContainer>
+                <DarkDefinition>{wordDetails.definition}</DarkDefinition>
+                <DarkExample>“{wordDetails.example}”</DarkExample>
+            </DarkInfoContainer>
+          </DarkContainer>
+        )}
+      </>
+      
     );
 }
 
