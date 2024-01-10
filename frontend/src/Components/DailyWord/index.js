@@ -26,12 +26,11 @@ function DailyWord() {
     }, []);
 
     return (
-        <Container>
-            <Title>{wordDetails.word}</Title>
-            <Definition>{wordDetails.definition}</Definition>
-            <Example>{wordDetails.example}</Example>
-            <PartOfSpeech>{wordDetails.partOfSpeech}</PartOfSpeech>
-        </Container>
+      <Container>
+        <Title>{wordDetails.word} <PartOfSpeech>({wordDetails.partOfSpeech})</PartOfSpeech></Title>
+        <Definition>{wordDetails.definition}</Definition>
+        <Example>“{wordDetails.example}”</Example>
+      </Container>
     );
 }
 
