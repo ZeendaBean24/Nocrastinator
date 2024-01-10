@@ -78,7 +78,7 @@ function App() {
           </div>
           <div className='item item-5'>
             {/* Quote of the Day */}
-            <QuoteDisplay />
+            {/* <QuoteDisplay /> */}
           </div>
           <div className='item item-6'>
             {/* Word of the Day*/}
