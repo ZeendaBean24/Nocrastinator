@@ -5,6 +5,7 @@ export const LightContainer = styled.div`
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    width: 800px;
     background-color: powderblue;
     text-align: center;
     border-radius: 60px;
@@ -67,6 +68,7 @@ export const DarkContainer = styled.div`
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    width: 800px;
     background-color: midnightblue;
     text-align: center;
     border-radius: 60px;
