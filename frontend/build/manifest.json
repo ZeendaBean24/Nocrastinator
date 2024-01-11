@@ -1,10 +1,6 @@
 {
   "short_name": "Focus!",
   "name": "Nocrastinator!",
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
 
   "version": "1.0",
   "manifest_version": 2,
@@ -12,6 +8,6 @@
       "default_popup": "index.html"
   },
   "chrome_url_overrides": {
-    "newtab": "index.html"
+    "newtab": "popup.html"
   }
 }
