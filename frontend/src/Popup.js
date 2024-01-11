@@ -1,8 +1,11 @@
 import React from 'react'
+import './Popup.css'
 
 function Popup() {
   return (
-    <div>popup</div>
+    <div>
+        <h1>Hi</h1>
+    </div>
   )
 }
 
