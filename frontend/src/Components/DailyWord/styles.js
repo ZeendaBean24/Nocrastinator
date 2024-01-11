@@ -87,10 +87,12 @@ export const DarkTitle = styled.h1`
 
 export const DarkInfoContainer = styled.div`
     font-size: 15px;
-    background-color: midnightblue; // Same color as the Container for smooth transition
+    background-color: midnightblue;
     box-shadow:
-        inset 0px 0px 8px rgba(0, 0, 0, 0.5), // Darker shadow for depth
-        inset 0px 0px 8px rgba(255, 255, 255, 0.3); // Lighter shadow for raised effect
+        inset 0px 0px 8px rgba(0, 0, 0, 0.5), /* Darker shadow for depth */
+        inset 0px 0px 8px rgba(255, 255, 255, 0.3), /* Lighter shadow for raised effect */
+        0px 0px 0px 1px rgba(0, 0, 0, 0.3), /* Border shadow for engraved effect */
+        0px 0px 8px rgba(0, 0, 0, 0.1); /* Additional outer shadow for depth */
     padding: 5px;
     border-radius: 40px;
     padding-left: 15px;
