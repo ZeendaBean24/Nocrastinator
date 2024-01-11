@@ -1,12 +1,12 @@
-import React from 'react'
-import './Popup.css'
+// Popup.js
+import React from 'react';
 
 function Popup() {
   return (
-    <div>
-        <h1>Hi</h1>
+    <div style={{ color: 'black', backgroundColor: 'white', padding: '20px' }}>
+      <h1>Hello from Popup</h1>
     </div>
-  )
+  );
 }
 
-export default Popup
+export default Popup;

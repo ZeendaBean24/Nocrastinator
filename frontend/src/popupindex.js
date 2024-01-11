@@ -1,12 +1,11 @@
+// popupindex.js
 import React from 'react';
-import ReactDOM, {createRoot} from 'react-dom/client';
-import Popup from './popup';
-import './popupindex.css'; // If you have specific styles for your popup
+import ReactDOM from 'react-dom';
+import Popup from './popup'; // Adjust the path as needed
 
-const rootElement = document.getElementById('popup-root');
-const root = createRoot(rootElement);
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <Popup />
   </React.StrictMode>,
+  document.getElementById('popup-root')
 );

@@ -8,6 +8,7 @@ const config = {
   devtool: "cheap-module-source-map",
   entry: {
     app: path.join(__dirname, "./static/index.js"),
+    popup: path.join(__dirname, "./static/popup.js"),
   },
   output: {
     path: path.resolve(__dirname, "./build"),
@@ -27,6 +28,18 @@ const config = {
       manifest: "manifest.json",
       filename: "index.html",
       template: "./static/index.html",
+      hash: true
+    }),
+    new HtmlWebpackPlugin({
+      title: "Focus!",
+      meta: {
+        charset: "utf-8",
+        viewport: "width=device-width, initial-scale=1, shrink-to-fit=no"
+        // Add any other meta tags specific to the popup if needed
+      },
+      filename: "popup.html",
+      template: "./static/popup.html",
+      chunks: ["popup"],
       hash: true
     }),
     new CopyPlugin([
