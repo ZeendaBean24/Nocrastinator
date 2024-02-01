@@ -4,29 +4,14 @@ export const LinksContainer = styled.div`
   background-color: powderblue;
   padding: 20px;
   border-radius: 10px;
+  text-align: center;
+  position: relative;
   box-shadow: 
         30px 30px 30px -10px rgba(0, 0, 0, 0.15),
         inset 15px 15px 10px rgba(255, 255, 255, 0.75),
         -15px -15px 35px rgba(255, 255, 255, 0.55),
         inset -1px -1px 10px rgba(0, 0, 0, 0.2);
 `;
-
-export const ClickableText = styled.div`
-    text-align: center;
-    word-wrap: break-word;
-    font-size: 1rem; /* Adjust the font size as needed */
-    padding: 5px; /* Add padding to the text for better appearance */
-    border-radius: 50px;
-    cursor: pointer;
-    background-color: midnightblue; /* Text color is midnight blue */
-    background-clip: text;
-    color: transparent;
-    text-shadow: rgba(225, 225, 225, 0.5) 
-                3px 4px 6px;
-    &:hover {
-      text-decoration: underline;
-    }
-`
 
 export const LinkItem = styled.a`
   display: block;
@@ -46,12 +31,24 @@ export const DropdownContent = styled.div`
   box-shadow: 8px 8px 16px #d9d9d9, -8px -8px 16px #ffffff;
   z-index: 1;
   transition: all 0.3s ease-out;
+  transform: translateY(0);
+  opacity: 0;
+`;
 
-  ${props => props.isOpen && css`
-    display: block;
-    transform: translateY(10px);
-    opacity: 1;
-  `}
+export const ClickableText = styled.div`
+  color: #333;
+  cursor: pointer;
+  &:hover {
+    color: #007bff;
+    text-decoration: underline;
+
+    // Targeting DropdownContent when ClickableText is hovered
+    ~ ${DropdownContent} {
+      display: block;
+      transform: translateY(10px);
+      opacity: 1;
+    }
+  }
 `;
 
 export const LogoImage = styled.img`
