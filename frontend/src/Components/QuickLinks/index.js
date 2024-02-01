@@ -5,7 +5,7 @@ const QuickLinks = ({ links }) => {
   return (
     <div>
       <LinksContainer>
-        <ClickableText>Quick Links</ClickableText>
+        <ClickableText>Links</ClickableText>
         <DropdownContent>
           {links.map(link => (
             <LinkItem href={link.url} key={link.url} target="_blank" rel="noopener noreferrer">
