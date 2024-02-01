@@ -59,13 +59,13 @@ export const DarkClickableText = styled.div`
   cursor: pointer;
   font-size: 2rem; /* Adjust the font size as needed */
   padding: 5px; /* Add padding to the text for better appearance */
-  background-color: midnightblue; /* Text color is midnight blue */
+  background-color: powderblue; /* Text color is midnight blue */
   background-clip: text;
-  color: midnightblue;
-  text-shadow: 2px 3px 6px 
+  color: powderblue;
+  text-shadow: 3px 5px 3px 
             rgba(0, 0, 0, 0.5),  
-            -2px -2px 0 
-            rgba(255, 255, 255, 0.8); 
+            -2px -2px 6px
+            rgba(255, 255, 255, 0.8)
 `;
 
 export const LogoImage = styled.img`
@@ -101,16 +101,15 @@ export const LightLinksContainer = styled.div`
 `;
 
 export const DarkLinksContainer = styled.div`
-  background-color: powderblue;
+  background-color: midnightblue;
   padding: 20px;
   border-radius: 30px;
   text-align: center;
   position: relative;
-  box-shadow: 
-        30px 30px 30px -10px rgba(0, 0, 0, 0.15),
-        inset 15px 15px 10px rgba(255, 255, 255, 0.75),
-        -15px -15px 35px rgba(255, 255, 255, 0.55),
-        inset -1px -1px 10px rgba(0, 0, 0, 0.2);
+  box-shadow:
+      15px 25px 20px rgba(0, 0, 0, 0.2), /* Outer shadow */
+      -10px -10px 20px rgba(255, 255, 255, 0.1); /* Inner shadow */
+  margin: 0 auto; /* Center the container horizontally */
       
   transition: all 0.3s ease-out;
   &:hover {

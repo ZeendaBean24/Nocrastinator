@@ -43,7 +43,7 @@ export const DarkClockContainer = styled.div`
   box-shadow:
     15px 25px 20px rgba(0, 0, 0, 0.2), /* Outer shadow */
     -10px -10px 20px rgba(255, 255, 255, 0.1); /* Inner shadow */
-    margin: 0 auto; /* Center the container horizontally */
+  margin: 0 auto; /* Center the container horizontally */
 
   &:before {
     content: '';
