@@ -1,45 +1,61 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const LinksContainer = styled.div`
-  background-color: #f0f0f0; // Example background color
+  background-color: powderblue;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 
+        30px 30px 30px -10px rgba(0, 0, 0, 0.15),
+        inset 15px 15px 10px rgba(255, 255, 255, 0.75),
+        -15px -15px 35px rgba(255, 255, 255, 0.55),
+        inset -1px -1px 10px rgba(0, 0, 0, 0.2);
 `;
+
+export const ClickableText = styled.div`
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 1rem; /* Adjust the font size as needed */
+    padding: 5px; /* Add padding to the text for better appearance */
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: midnightblue; /* Text color is midnight blue */
+    background-clip: text;
+    color: transparent;
+    text-shadow: rgba(225, 225, 225, 0.5) 
+                3px 4px 6px;
+    &:hover {
+      text-decoration: underline;
+    }
+`
 
 export const LinkItem = styled.a`
   display: block;
-  color: #333; // Example text color
+  color: #333;
   padding: 10px 0;
   text-decoration: none;
   &:hover {
-    color: #007bff; // Change color on hover
-  }
-`;
-
-export const DropdownButton = styled.button`
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  &:hover {
-    background-color: #0056b3;
+    color: #007bff;
   }
 `;
 
 export const DropdownContent = styled.div`
-  display: ${props => props.isOpen ? 'block' : 'none'};
+  display: none;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 8px 8px 16px #d9d9d9, -8px -8px 16px #ffffff;
   z-index: 1;
+  transition: all 0.3s ease-out;
+
+  ${props => props.isOpen && css`
+    display: block;
+    transform: translateY(10px);
+    opacity: 1;
+  `}
 `;
 
 export const LogoImage = styled.img`
-  height: 20px; // Adjust size as needed
+  height: 20px;
   width: auto;
   margin-right: 10px;
 `;
