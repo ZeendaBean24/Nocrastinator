@@ -21,8 +21,17 @@ export const LinkItem = styled.a`
 `;
 
 export const ClickableText = styled.div`
-  color: #333;
+  text-align: center;
   cursor: pointer;
+  font-size: 2rem; /* Adjust the font size as needed */
+  padding: 5px; /* Add padding to the text for better appearance */
+  background-color: midnightblue; /* Text color is midnight blue */
+  background-clip: text;
+  color: midnightblue;
+  text-shadow: 2px 3px 6px 
+            rgba(0, 0, 0, 0.5),  
+            -2px -2px 0 
+            rgba(255, 255, 255, 0.8); 
 `;
 
 export const LogoImage = styled.img`
@@ -42,6 +51,7 @@ export const LinksContainer = styled.div`
         inset 15px 15px 10px rgba(255, 255, 255, 0.75),
         -15px -15px 35px rgba(255, 255, 255, 0.55),
         inset -1px -1px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-out;
   &:hover {
     ${DropdownContent} {
       display: block;
