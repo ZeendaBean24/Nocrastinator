@@ -1,21 +1,35 @@
 import React from 'react';
-import { LinksContainer, ClickableText, LinkItem, DropdownContent, LogoImage } from './styles';
+import { LightLinksContainer, DarkLinksContainer, LightClickableText, DarkClickableText, LightLinkItem, DarkLinkItem, LightDropdownContent, DarkDropdownContent, LogoImage } from './styles';
 
-const QuickLinks = ({ links }) => {
+const QuickLinks = ({ links , theme}) => {
   return (
-    <div>
-      <LinksContainer>
-        <ClickableText>Links</ClickableText>
-        <DropdownContent>
+    <>
+      {theme === 'light' ? (
+          <LightLinksContainer>
+          <LightClickableText>Links</LightClickableText>
+          <LightDropdownContent>
+            {links.map(link => (
+              <LightLinkItem href={link.url} key={link.url} target="_blank" rel="noopener noreferrer">
+                <LogoImage src={`https://logo.clearbit.com/${link.url}`} alt={`${link.name} Logo`} />
+                {link.name}
+              </LightLinkItem>
+            ))}
+          </LightDropdownContent>
+        </LightLinksContainer>
+      ) : (
+        <DarkLinksContainer>
+        <DarkClickableText>Links</DarkClickableText>
+        <DarkDropdownContent>
           {links.map(link => (
-            <LinkItem href={link.url} key={link.url} target="_blank" rel="noopener noreferrer">
+            <DarkLinkItem href={link.url} key={link.url} target="_blank" rel="noopener noreferrer">
               <LogoImage src={`https://logo.clearbit.com/${link.url}`} alt={`${link.name} Logo`} />
               {link.name}
-            </LinkItem>
+            </DarkLinkItem>
           ))}
-        </DropdownContent>
-      </LinksContainer>
-    </div>
+        </DarkDropdownContent>
+      </DarkLinksContainer>
+      )}
+    </>
   );
 };
 

@@ -76,7 +76,7 @@ function App() {
           </div>
           <div className='item item-4'>
             {/* Quick Links */}
-            <QuickLinks links={links} />
+            <QuickLinks links={links} theme={theme}/>
           </div>
           <div className='item item-5'>
             {/* Quote of the Day */}
