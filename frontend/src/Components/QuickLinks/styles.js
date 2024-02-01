@@ -7,7 +7,7 @@ export const DropdownContent = styled.div`
   min-width: 160px;
   box-shadow: 8px 8px 16px #d9d9d9, -8px -8px 16px #ffffff;
   z-index: 1;
-  transition: all 0.3s ease-out;
+  transition: all 1s ease-out;
   transform: translateY(0);
   opacity: 0;
 `;
@@ -47,7 +47,6 @@ export const ClickableText = styled.div`
     color: #007bff;
     text-decoration: underline;
 
-    // Targeting DropdownContent when ClickableText is hovered
     ~ ${DropdownContent} {
       display: block;
       transform: translateY(10px);
