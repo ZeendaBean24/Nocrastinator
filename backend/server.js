@@ -1,7 +1,7 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.DEPLOYMENT_URL;
 require('dotenv').config();
 const cors = require('cors');
 app.use(cors());
@@ -10,25 +10,25 @@ app.use(express.json());
 
 const categories = ['age', 'attitude', 'change', 'courage', 'death', 'dreams', 'equality', 'experience', 'failure', 'faith', 'fear', 'fitness', 'forgiveness', 'freedom', 'friendship', 'happiness', 'health', 'hope', 'imagination', 'leadership', 'love', 'life', 'money', 'success'];
 
-app.get('/api/quote', async (req, res) => {
-    const randomCategory = categories[Math.floor(Math.random() * categories.length)];
-    try {
-        const response = await fetch(`https://api.api-ninjas.com/v1/quotes?category=${randomCategory}`, {
-            // mode: 'use-cors',
-            headers: { 'X-Api-Key': process.env.API_KEY }
-        });
+// app.get('/api/quote', async (req, res) => {
+//     const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+//     try {
+//         const response = await fetch(`https://api.api-ninjas.com/v1/quotes?category=${randomCategory}`, {
+//             // mode: 'use-cors',
+//             headers: { 'X-Api-Key': process.env.API_KEY }
+//         });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+//         if (!response.ok) {
+//             throw new Error(`HTTP error! status: ${response.status}`);
+//         }
 
-        const data = await response.json();
-        const quote = data[0];
-        res.json({ ...quote, category: randomCategory });
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
+//         const data = await response.json();
+//         const quote = data[0];
+//         res.json({ ...quote, category: randomCategory });
+//     } catch (error) {
+//         res.status(500).json({ error: error.message });
+//     }
+// });
 
 app.get('/wordOfTheDay', async (req, res) => {
     const apiKey = process.env.WORDNIK_API_KEY;
