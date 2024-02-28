@@ -10,12 +10,14 @@ const QuoteDisplay = () => {
         const storedQuoteData = localStorage.getItem('quoteData');
         const storedDate = localStorage.getItem('quoteDate');
 
+        const apiUrl = `${process.env.REACT_APP_DEPLOYMENT_URL}/quote`;
+
         if (storedQuoteData && storedDate === today) {
             // Use the stored quote if it was fetched today
             setQuoteData(JSON.parse(storedQuoteData));
         } else {
             // Fetch a new quote and update localStorage
-            fetch('/api/quote')
+            fetch(apiUrl)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`Error: ${response.status}`);

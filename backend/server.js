@@ -12,7 +12,7 @@ app.use(express.json());
 
 const categories = ['age', 'attitude', 'change', 'courage', 'death', 'dreams', 'equality', 'experience', 'failure', 'faith', 'fear', 'fitness', 'forgiveness', 'freedom', 'friendship', 'happiness', 'health', 'hope', 'imagination', 'leadership', 'love', 'life', 'money', 'success'];
 
-// app.get('/api/quote', async (req, res) => {
+// app.get('/quote', async (req, res) => {
 //     const randomCategory = categories[Math.floor(Math.random() * categories.length)];
 //     try {
 //         const response = await fetch(`https://api.api-ninjas.com/v1/quotes?category=${randomCategory}`, {
