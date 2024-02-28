@@ -10,7 +10,7 @@ function DailyWord( {theme} ) {
     });
 
     useEffect(() => {
-        const apiUrl = `${process.env.DEPLOYMENT_URL}/wordOfTheDay`;
+        const apiUrl = `${process.env.REACT_APP_DEPLOYMENT_URL}/wordOfTheDay`;
 
         fetch(apiUrl)
             .then(response => response.json())
