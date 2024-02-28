@@ -3,6 +3,8 @@ const fetch = require('node-fetch');
 const app = express();
 require('dotenv').config();
 
+const PORT = process.env.PORT || 3001;
+
 const cors = require('cors');
 app.use(cors());
 
@@ -61,6 +63,6 @@ app.get('/wordOfTheDay', async (req, res) => {
     }
 });
 
-app.listen(process.env.DEPLOYMENT_URL, () => {
-    console.log(`Server running on port ${process.env.DEPLOYMENT_URL}`);
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
