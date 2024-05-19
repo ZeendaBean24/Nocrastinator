@@ -275,30 +275,57 @@ const generateSTYLES = () => {
     </div>
      `;
   };
+
+    // Function to enable the blocker
+    function enableBlocker() {
+        switch (window.location.hostname) {
+            case "www.youtube.com":
+              document.head.innerHTML = generateSTYLES();
+              document.body.innerHTML = generateHTML("YOUTUBE");
+              break;
+            case "www.facebook.com":
+              document.head.innerHTML = generateSTYLES();
+              document.body.innerHTML = generateHTML("FACEBOOK");
+              break;
+            case "www.netflix.com":
+              document.head.innerHTML = generateSTYLES();
+              document.body.innerHTML = generateHTML("NETFLIX");
+              break;
+            case "www.roblox.com":
+              document.head.innerHTML = generateSTYLES();
+              document.body.innerHTML = generateHTML("ROBLOX");
+              break;
+            case "discord.com":
+              document.head.innerHTML = generateSTYLES();
+              document.body.innerHTML = generateHTML("DISCORD");
+              break;
+            case "www.spotify.com":
+              document.head.innerHTML = generateSTYLES();
+              document.body.innerHTML = generateHTML("SPOTIFY");
+              break;
+          }
+    }
+    
+    // Function to disable the blocker
+    function disableBlocker() {
+        window.location.reload();
+    }
+    
+    // Listen for messages from popup.js to toggle the blocker
+    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+        if (request.action === 'toggleBlocker') {
+            if (request.enabled) {
+                enableBlocker();
+            } else {
+                disableBlocker();
+            }
+        }
+    });
+    
+    // Check initial state from storage and enable blocker if necessary
+    chrome.storage.sync.get('blockerEnabled', function(data) {
+        if (data.blockerEnabled) {
+        enableBlocker();
+        }
+    });
   
-  switch (window.location.hostname) {
-    case "www.youtube.com":
-      document.head.innerHTML = generateSTYLES();
-      document.body.innerHTML = generateHTML("YOUTUBE");
-      break;
-    case "www.facebook.com":
-      document.head.innerHTML = generateSTYLES();
-      document.body.innerHTML = generateHTML("FACEBOOK");
-      break;
-    case "www.netflix.com":
-      document.head.innerHTML = generateSTYLES();
-      document.body.innerHTML = generateHTML("NETFLIX");
-      break;
-    case "www.roblox.com":
-      document.head.innerHTML = generateSTYLES();
-      document.body.innerHTML = generateHTML("ROBLOX");
-      break;
-    case "discord.com":
-      document.head.innerHTML = generateSTYLES();
-      document.body.innerHTML = generateHTML("DISCORD");
-      break;
-    case "www.spotify.com":
-      document.head.innerHTML = generateSTYLES();
-      document.body.innerHTML = generateHTML("SPOTIFY");
-      break;
-  }

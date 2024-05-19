@@ -4,8 +4,8 @@
   "name": "Nocrastinator!",
   "version": "1.0",
   "browser_action": {
-      "default_popup": "Popup.html",
-      "default_title": "Procrastination Blocker"
+    "default_popup": "Popup.html",
+    "default_title": "Procrastination Blocker"
   },
   "chrome_url_overrides": {
     "newtab": "index.html"
@@ -15,5 +15,13 @@
       "matches": ["<all_urls>"],
       "js": ["Content.js"]
     }
-  ]
+  ],
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["popup.js"],
+    "persistent": false
+  }
 }
