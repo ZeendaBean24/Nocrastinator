@@ -1,33 +1,62 @@
 const generateSTYLES = () => {
     return `<style>@import url(https://fonts.googleapis.com/css?family=opensans:500);
-    body {
-      background: #33cc99;
-      color: #fff;
-      font-family: "Open Sans", sans-serif;
-      max-height: 700px;
-      overflow: hidden;
+    :root {
+        --blackish: #222;
+        --whiteish: #e5e5e5;
+        --red:  #ff5e56;
+        --yellow: #ffbd2e;
+        --green: #27c93f;
+        --backgroundSize: 300px;
     }
+    
+    body {
+      box-sizing: border-box;
+      margin:0;
+      height: 100vh;
+      font-family: "Open Sans", sans-serif;
+      background-image: url(https://img.freepik.com/free-vector/seamless-pattern_1159-5086.jpg?size=626&ext=jpg);
+      background-size: var(--backgroundSize);
+      color: var(--whiteish);
+      display: grid;
+      place-items: center;
+      animation: movingBackground 5s linear infinite;
+    }
+
+    body:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0,0,0,0.9);
+        z-index: 1;
+    }
+    @keyframes movingBackground {
+        from { background-position: 0 0;}
+        to {background-position: var(--backgroundSize) var(--backgroundSize);}
+    }
+
     .c {
       text-align: center;
       display: block;
       position: relative;
       width: 80%;
       margin: 100px auto;
+      z-index: 4;
     }
     ._404 {
-      font-size: 220px;
+      font-size: 60px;
       position: relative;
       display: inline-block;
-      z-index: 2;
+      z-index: 3;
       height: 250px;
-      letter-spacing: 15px;
+      letter-spacing: 10px;
     }
     ._1 {
       text-align: center;
       display: block;
       position: relative;
-      letter-spacing: 12px;
-      font-size: 4em;
+      letter-spacing: 6px;
+      font-size: 3em;
       line-height: 80%;
     }
     ._2 {
@@ -64,7 +93,7 @@ const generateSTYLES = () => {
       margin: 0px auto;
       width: 420px;
       height: 10px;
-      z-index: -10;
+      z-index: 2;
     }
     
     hr:after {
@@ -93,7 +122,7 @@ const generateSTYLES = () => {
     
       position: absolute;
       margin: 120px auto 20px;
-      z-index: -1;
+      z-index: 2;
       transition: ease 1s;
     }
     
@@ -102,7 +131,7 @@ const generateSTYLES = () => {
       content: "";
       position: absolute;
       background: #fff;
-      z-index: -1;
+      z-index: 2;
     }
     
     .cloud:after {
@@ -233,19 +262,21 @@ const generateSTYLES = () => {
   
   const generateHTML = (pageName) => {
     return `
-     
-     <div id="clouds">
-        <div class="cloud x1"></div>
-        <div class="cloud x1_5"></div>
-        <div class="cloud x2"></div>
-        <div class="cloud x3"></div>
-        <div class="cloud x4"></div>
-        <div class="cloud x5"></div>
+    <div class="modal">
+        
+    </div>
+    <div id="clouds">
+      <div class="cloud x1"></div>
+      <div class="cloud x1_5"></div>
+      <div class="cloud x2"></div>
+      <div class="cloud x3"></div>
+      <div class="cloud x4"></div>
+      <div class="cloud x5"></div>
     </div>
     <div class='c'>
-        <div class='_404'>404</div>
+        <div class='_404'>GET BACK TO WORK</div>
         <hr>
-        <div class='_1'>GET BACK TO WORK</div>
+        <div class='_1'>${pageName} IS NOT ALLOWED</div>
         <div class='_2'>STUDYING > ${pageName}</div>
     </div>
      `;
