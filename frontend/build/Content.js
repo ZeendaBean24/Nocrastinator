@@ -6,6 +6,7 @@ const generateSTYLES = () => {
         --red:  #ff5e56;
         --yellow: #ffbd2e;
         --green: #27c93f;
+        --aqua: #01f1f1;
         --backgroundSize: 300px;
     }
     
@@ -20,6 +21,7 @@ const generateSTYLES = () => {
       display: grid;
       place-items: center;
       animation: movingBackground 5s linear infinite;
+      overflow: hidden;
     }
 
     body:after {
@@ -40,7 +42,7 @@ const generateSTYLES = () => {
       display: block;
       position: relative;
       width: 80%;
-      margin: 100px auto;
+      margin: 300px auto;
       z-index: 4;
     }
     ._404 {
@@ -48,22 +50,27 @@ const generateSTYLES = () => {
       position: relative;
       display: inline-block;
       z-index: 3;
-      height: 250px;
+      height: 80px;
       letter-spacing: 10px;
+      color: var(--aqua);
     }
     ._1 {
       text-align: center;
       display: block;
       position: relative;
-      letter-spacing: 6px;
+      letter-spacing: 3px;
       font-size: 3em;
       line-height: 80%;
+      margin-top: 10px;
+      color: var(--aqua);
     }
     ._2 {
       text-align: center;
       display: block;
       position: relative;
       font-size: 20px;
+      margin-top: 10px;
+      color: var(--aqua);
     }
     .text {
       font-size: 70px;
@@ -87,8 +94,8 @@ const generateSTYLES = () => {
     hr {
       padding: 0;
       border: none;
-      border-top: 5px solid #fff;
-      color: #fff;
+      border-top: 5px solid var(--whiteish);
+      color: var(--whiteish);
       text-align: center;
       margin: 0px auto;
       width: 420px;
@@ -102,7 +109,7 @@ const generateSTYLES = () => {
       top: -0.75em;
       font-size: 2em;
       padding: 0 0.2em;
-      background: #33cc99;
+      background: var(--whiteish);
     }
     
     .cloud {
@@ -207,7 +214,7 @@ const generateSTYLES = () => {
     
     .x4 {
       left: 470px;
-      botttom: 20px;
+      top: 440px;
     
       -webkit-transform: scale(0.75);
       -moz-transform: scale(0.75);
@@ -217,20 +224,6 @@ const generateSTYLES = () => {
       -webkit-animation: moveclouds 18s linear infinite;
       -moz-animation: moveclouds 18s linear infinite;
       -o-animation: moveclouds 18s linear infinite;
-    }
-    
-    .x5 {
-      left: 200px;
-      top: 300px;
-    
-      -webkit-transform: scale(0.5);
-      -moz-transform: scale(0.5);
-      transform: scale(0.5);
-      opacity: 0.8;
-    
-      -webkit-animation: moveclouds 20s linear infinite;
-      -moz-animation: moveclouds 20s linear infinite;
-      -o-animation: moveclouds 20s linear infinite;
     }
     
     @-webkit-keyframes moveclouds {
@@ -271,7 +264,6 @@ const generateSTYLES = () => {
       <div class="cloud x2"></div>
       <div class="cloud x3"></div>
       <div class="cloud x4"></div>
-      <div class="cloud x5"></div>
     </div>
     <div class='c'>
         <div class='_404'>GET BACK TO WORK</div>
