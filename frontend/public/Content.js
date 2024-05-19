@@ -1,5 +1,5 @@
 const generateSTYLES = () => {
-    return `<style>@import url(https://fonts.googleapis.com/css?family=opensans:500);
+    return `<style>@import url(https://fonts.googleapis.com/css2?family=Freeman&display=swap);
     :root {
         --blackish: #222;
         --whiteish: #e5e5e5;
@@ -14,7 +14,9 @@ const generateSTYLES = () => {
       box-sizing: border-box;
       margin:0;
       height: 100vh;
-      font-family: "Open Sans", sans-serif;
+      font-family: "Freeman", sans-serif;
+      font-weight: 400;
+      font-style: normal;
       background-image: url(https://img.freepik.com/free-vector/seamless-pattern_1159-5086.jpg?size=626&ext=jpg);
       background-size: var(--backgroundSize);
       color: var(--whiteish);
