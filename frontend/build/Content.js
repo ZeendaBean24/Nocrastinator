@@ -15,7 +15,7 @@ const generateSTYLES = () => {
       margin:0;
       height: 100vh;
       font-family: "Open Sans", sans-serif;
-      background-image: url(https://img.freepik.com/free-vector/seamless-pattern_1159-5086.jpg?size=626&ext=jpg);
+      background-image: url("background-img.png");
       background-size: var(--backgroundSize);
       color: var(--whiteish);
       display: grid;
