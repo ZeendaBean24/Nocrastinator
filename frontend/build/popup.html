@@ -6,21 +6,86 @@
   <style>
     body {
       width: 300px; /* Adjust width as needed */
-      height: 200px; /* Adjust height as needed */
+      height: auto; /* Adjust height as needed */
+      font-family: Arial, sans-serif;
     }
     #popup {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100%;
+      padding: 10px;
+    }
+    .switch {
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
   <div id="popup">
-    <p>Block all websites: <span id="blockStatus">OFF</span></p>
-    <button id="toggleButton">Toggle ON</button>
+    <div class="switch">
+      <label>
+        Block all websites:
+        <span id="blockStatus">OFF</span>
+        <button id="masterToggleButton">Toggle ON</button>
+      </label>
+    </div>
+    <div id="individualSwitches">
+      <div class="switch">
+        <label>
+          YouTube:
+          <input type="checkbox" id="youtubeSwitch">
+        </label>
+      </div>
+      <div class="switch">
+        <label>
+          Facebook:
+          <input type="checkbox" id="facebookSwitch">
+        </label>
+      </div>
+      <div class="switch">
+        <label>
+          Netflix:
+          <input type="checkbox" id="netflixSwitch">
+        </label>
+      </div>
+      <div class="switch">
+        <label>
+          Roblox:
+          <input type="checkbox" id="robloxSwitch">
+        </label>
+      </div>
+      <div class="switch">
+        <label>
+          Discord:
+          <input type="checkbox" id="discordSwitch">
+        </label>
+      </div>
+      <div class="switch">
+        <label>
+          Instagram:
+          <input type="checkbox" id="instagramSwitch">
+        </label>
+      </div>
+      <div class="switch">
+        <label>
+          Snapchat:
+          <input type="checkbox" id="snapchatSwitch">
+        </label>
+      </div>
+      <div class="switch">
+        <label>
+          Reddit:
+          <input type="checkbox" id="redditSwitch">
+        </label>
+      </div>
+      <div class="switch">
+        <label>
+          Twitter (X):
+          <input type="checkbox" id="twitterSwitch">
+        </label>
+      </div>
+    </div>
+    <p id="overrideText" style="display: none;">Master switch is ON. Individual switches are overridden.</p>
   </div>
   <script src="popup.js"></script>
 </body>
