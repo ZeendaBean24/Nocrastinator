@@ -17,7 +17,7 @@
 2. Use the master switch to block or unblock all websites.
 3. Toggle individual websites using the provided switches.
 4. Add custom websites:
-   - Enter the URL (make sure it starts with 'www.') and the website name in the provided fields.
+   - Enter the URL and the website name in the provided fields.
    - Click "Add Website" to add it to the list of blocked websites.
 5. The extension will automatically block the specified websites when they are accessed.
 
@@ -65,6 +65,11 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## Contact
 If you have any questions or feedback, feel free to open an issue.
+
+---
+
+# Changelog
+- `CHANGELOG.md` [here](CHANGELOG.md)
 
 ---
 
