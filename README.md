@@ -1,7 +1,7 @@
 # Nocrastinator
 
 ## Overview
-**Nocrastinator** is built with `React.js` allows users to block distracting websites to help improve productivity and focus. Users can toggle the blocker on and off for all websites or individual websites. The extension also supports adding custom websites for blocking.
+**Nocrastinator** is built with `React.js` and allows users to block distracting websites to help improve productivity and focus. Users can toggle the blocker on and off for all websites or individual websites. The extension also supports adding custom websites for blocking.
 
 ---
 # Website Blocker V1
@@ -20,6 +20,20 @@
    - Enter the URL (make sure it starts with 'www.') and the website name in the provided fields.
    - Click "Add Website" to add it to the list of blocked websites.
 5. The extension will automatically block the specified websites when they are accessed.
+
+---
+# Custom New Tab V1
+## Features
+- **Clock**: Displays the current time with theme-based styling.
+- **Weather App**: Provides current weather updates based on the user's location.
+- **Greeting**: Shows a greeting message that changes based on the time of day.
+- **Quick Links**: Allows users to access frequently visited websites quickly.
+- **Quote Display**: (Coming Soon) Displays a motivational quote each day.
+- **Daily Word**: Displays a word of the day with an example sentence to expand your vocabulary.
+- **Theme Toggle**: Switch between light and dark themes.
+
+## Usage
+- Once **Nocrastinator** is loaded, there should be a prompt by Chrome asking you if you want **Nocrastinator** to replace your default new tab page. Click `Yes`. You can always turn it back off at `chrome://extensions/` if you want to revert back to the old new tab page. 
 
 ---
 
