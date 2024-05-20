@@ -287,8 +287,11 @@ const websites = {
 };
 
 function enableBlocker(hostname) {
-  document.head.innerHTML = generateSTYLES();
-  document.body.innerHTML = generateHTML(websites[hostname]);
+  const pageName = websites[hostname];
+  if (pageName) {
+    document.head.innerHTML = generateSTYLES();
+    document.body.innerHTML = generateHTML(pageName);
+  }
 }
 
 function disableBlocker() {
@@ -299,7 +302,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === 'toggleBlocker') {
     if (request.enabled) {
       for (let hostname in websites) {
-        enableBlocker(hostname);
+        if (hostname === window.location.hostname) {
+          enableBlocker(hostname);
+          break;
+        }
       }
     } else {
       disableBlocker();
@@ -310,7 +316,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 chrome.storage.sync.get(['blockerEnabled', 'websiteBlockerStates'], function(data) {
   if (data.blockerEnabled) {
     for (let hostname in websites) {
-      enableBlocker(hostname);
+      if (hostname === window.location.hostname) {
+        enableBlocker(hostname);
+        break;
+      }
     }
   } else if (data.websiteBlockerStates) {
     const hostname = window.location.hostname;
