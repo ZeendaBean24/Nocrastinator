@@ -299,9 +299,21 @@ const generateSTYLES = () => {
               document.head.innerHTML = generateSTYLES();
               document.body.innerHTML = generateHTML("DISCORD");
               break;
-            case "www.spotify.com":
+            case "www.instagram.com":
               document.head.innerHTML = generateSTYLES();
-              document.body.innerHTML = generateHTML("SPOTIFY");
+              document.body.innerHTML = generateHTML("INSTAGRAM");
+              break;
+            case "web.snapchat.com":
+              document.head.innerHTML = generateSTYLES();
+              document.body.innerHTML = generateHTML("SNAPCHAT");
+              break;
+            case "www.reddit.com":
+              document.head.innerHTML = generateSTYLES();
+              document.body.innerHTML = generateHTML("REDDIT");
+              break;
+            case "x.com":
+              document.head.innerHTML = generateSTYLES();
+              document.body.innerHTML = generateHTML("TWITTER");
               break;
           }
     }
