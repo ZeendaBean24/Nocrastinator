@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Nocrastinator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+**Nocrastinator** is built with `React.js` allows users to block distracting websites to help improve productivity and focus. Users can toggle the blocker on and off for all websites or individual websites. The extension also supports adding custom websites for blocking.
 
-## Available Scripts
+---
+# Website Blocker V1
+## Features
+- Toggle blocking for all websites with a master switch.
+- Toggle blocking for individual websites.
+- Add and remove custom websites for blocking.
+- Custom website names for easy identification.
+- Intuitive and user-friendly interface.
 
-In the project directory, you can run:
+## Usage
+1. Click on the extension icon in the Chrome toolbar to open the popup interface.
+2. Use the master switch to block or unblock all websites.
+3. Toggle individual websites using the provided switches.
+4. Add custom websites:
+   - Enter the URL (make sure it starts with 'www.') and the website name in the provided fields.
+   - Click "Add Website" to add it to the list of blocked websites.
+5. The extension will automatically block the specified websites when they are accessed.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Installation (Chrome)
+- **Nocrasinator is in the process of being published on the Chrome Web Store: Stay Tuned!**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation (Local)
+1. Clone or download this repository to your local machine.
+2. Open Chrome and navigate to `chrome://extensions/`.
+3. Enable "Developer mode" by clicking the toggle switch in the top right corner.
+4. Click on the "Load unpacked" button and select the directory where you downloaded or cloned this repository.
+5. The extension should now appear in your list of installed extensions.
 
-### `npm test`
+## Contributing
+Contributions are welcome! Please follow these steps to contribute:
+1. Fork this repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Open a pull request.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-### `npm run build`
+## Acknowledgements
+- Special thanks to all contributors and peers for their feedback and support.
+- Special thanks to my advisor and experts who have helped: **Ms. Verma, Ms. Tulin**.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contact
+If you have any questions or feedback, feel free to open an issue.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for using **Nocrastinator**! We hope it helps you stay focused and productive.
