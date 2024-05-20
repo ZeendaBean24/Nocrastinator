@@ -274,7 +274,7 @@ const generateHTML = (pageName) => {
    `;
 };
 
-const websites = {
+const defaultWebsites = {
   "www.youtube.com": "YOUTUBE",
   "www.facebook.com": "FACEBOOK",
   "www.netflix.com": "NETFLIX",
@@ -287,11 +287,15 @@ const websites = {
 };
 
 function enableBlocker(hostname) {
-  const pageName = websites[hostname];
-  if (pageName) {
-    document.head.innerHTML = generateSTYLES();
-    document.body.innerHTML = generateHTML(pageName);
-  }
+  const websites = Object.assign({}, defaultWebsites);
+  chrome.storage.sync.get('customWebsites', function(data) {
+    Object.assign(websites, data.customWebsites || {});
+    const pageName = websites[hostname];
+    if (pageName) {
+      document.head.innerHTML = generateSTYLES();
+      document.body.innerHTML = generateHTML(pageName);
+    }
+  });
 }
 
 function disableBlocker() {
@@ -301,12 +305,7 @@ function disableBlocker() {
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === 'toggleBlocker') {
     if (request.enabled) {
-      for (let hostname in websites) {
-        if (hostname === window.location.hostname) {
-          enableBlocker(hostname);
-          break;
-        }
-      }
+      enableBlocker(window.location.hostname);
     } else {
       disableBlocker();
     }
@@ -315,12 +314,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 chrome.storage.sync.get(['blockerEnabled', 'websiteBlockerStates'], function(data) {
   if (data.blockerEnabled) {
-    for (let hostname in websites) {
-      if (hostname === window.location.hostname) {
-        enableBlocker(hostname);
-        break;
-      }
-    }
+    enableBlocker(window.location.hostname);
   } else if (data.websiteBlockerStates) {
     const hostname = window.location.hostname;
     if (data.websiteBlockerStates[hostname]) {
