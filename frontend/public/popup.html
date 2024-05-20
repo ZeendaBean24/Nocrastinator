@@ -5,7 +5,7 @@
   <title>Popup</title>
   <style>
     body {
-      width: 300px; /* Adjust width as needed */
+      width: 400px; /* Adjust width as needed */
       height: auto; /* Adjust height as needed */
       font-family: Arial, sans-serif;
     }
@@ -17,6 +17,22 @@
     }
     .switch {
       margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .form-group {
+      display: flex;
+      align-items: center;
+    }
+    .form-group label {
+      margin-right: 10px;
+    }
+    .form-group input {
+      margin-right: 10px;
+    }
+    .form-group button {
+      margin-left: auto;
     }
   </style>
 </head>
@@ -80,19 +96,23 @@
       </div>
       <div class="switch">
         <label>
-          Twitter (X):
+          Twitter:
           <input type="checkbox" id="twitterSwitch">
         </label>
       </div>
     </div>
-    <p id="overrideText" style="display: none;">Master switch is ON. Individual switches are overridden.</p>
-    <div>
-      <input type="text" id="customWebsiteInput" placeholder="Enter custom website (e.g., www.example.com)">
-      <input type="text" id="customWebsiteNameInput" placeholder="Enter website name">
-      <button id="addCustomWebsiteButton">Add Website</button>
-    </div>
     <div id="customWebsites">
       <!-- Custom websites will be listed here -->
+    </div>
+    <p id="overrideText" style="display: none;">Master switch is ON. Individual switches are overridden.</p>
+    <div class="form-group">
+      <label for="customWebsiteInput">Check if URL has 'www':</label>
+      <input type="text" id="customWebsiteInput" placeholder="Website Link">
+    </div>
+    <div class="form-group">
+      <!-- <label for="customWebsiteNameInput">Website Name:</label> -->
+      <input type="text" id="customWebsiteNameInput" placeholder="Name">
+      <button id="addCustomWebsiteButton">Add Website</button>
     </div>
   </div>
   <script src="popup.js"></script>

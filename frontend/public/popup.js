@@ -117,10 +117,10 @@ document.getElementById('addCustomWebsiteButton').addEventListener('click', func
   const hostname = customWebsiteInput.value.trim();
   const websiteName = customWebsiteNameInput.value.trim();
   if (hostname && websiteName) {
-    if (!/^www\./.test(hostname)) {
-      alert("Please ensure the website URL starts with 'www.'");
-      return;
-    }
+    // if (!/^www\./.test(hostname)) {
+    //   alert("Please ensure the website URL starts with 'www.'");
+    //   return;
+    // }
     chrome.storage.sync.get('customWebsites', function(data) {
       const customWebsites = data.customWebsites || {};
       customWebsites[hostname] = websiteName;
