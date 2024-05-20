@@ -24,27 +24,34 @@
     .form-group {
       display: flex;
       align-items: center;
+      width: 100%;
     }
     .form-group label {
       margin-right: 10px;
     }
     .form-group input {
       margin-right: 10px;
+      flex-grow: 1;
     }
     .form-group button {
-      margin-left: auto;
+      margin-left: 10px;
+    }
+    hr {
+      width: 100%;
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
   <div id="popup">
-    <div class="switch">
+    <div class="switch" style="justify-content: center;">
       <label>
         Block all websites:
         <span id="blockStatus">OFF</span>
         <button id="masterToggleButton">Toggle ON</button>
       </label>
     </div>
+    <hr>
     <div id="individualSwitches">
       <div class="switch">
         <label>
@@ -96,7 +103,7 @@
       </div>
       <div class="switch">
         <label>
-          Twitter:
+          Twitter (X):
           <input type="checkbox" id="twitterSwitch">
         </label>
       </div>
@@ -105,12 +112,12 @@
       <!-- Custom websites will be listed here -->
     </div>
     <p id="overrideText" style="display: none;">Master switch is ON. Individual switches are overridden.</p>
+    <hr>
     <div class="form-group">
       <label for="customWebsiteInput">Check if URL has 'www':</label>
       <input type="text" id="customWebsiteInput" placeholder="Website Link">
     </div>
     <div class="form-group">
-      <!-- <label for="customWebsiteNameInput">Website Name:</label> -->
       <input type="text" id="customWebsiteNameInput" placeholder="Name">
       <button id="addCustomWebsiteButton">Add Website</button>
     </div>
