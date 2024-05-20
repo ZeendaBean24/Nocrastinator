@@ -13,6 +13,11 @@ document.getElementById('masterToggleButton').addEventListener('click', function
           for (const switchId in websiteSwitches) {
             document.getElementById(switchId).disabled = blockerEnabled;
           }
+          // Disable custom website switches when master switch is on
+          const customSwitches = document.querySelectorAll('.customSwitch');
+          customSwitches.forEach(switchElement => {
+            switchElement.disabled = blockerEnabled;
+          });
         });
       });
     });
@@ -36,7 +41,7 @@ chrome.storage.sync.get(['blockerEnabled', 'websiteBlockerStates', 'customWebsit
 
   if (data.customWebsites) {
     for (const hostname in data.customWebsites) {
-      addCustomWebsiteToUI(hostname, data.customWebsites[hostname]);
+      addCustomWebsiteToUI(hostname, data.customWebsites[hostname], blockerEnabled, data.websiteBlockerStates);
     }
   }
 });
@@ -61,34 +66,34 @@ for (const switchId in websiteSwitches) {
     chrome.storage.sync.get('websiteBlockerStates', function(data) {
       const websiteBlockerStates = data.websiteBlockerStates || {};
       websiteBlockerStates[websiteSwitches[switchId]] = switchElement.checked;
-      chrome.storage.sync.set({ websiteBlockerStates: websiteBlockerStates }, function() {
-        // No need to reload or send a message to the content script here
-      });
+      chrome.storage.sync.set({ websiteBlockerStates: websiteBlockerStates });
     });
   });
 }
 
 // Function to add custom website to UI
-function addCustomWebsiteToUI(hostname, label) {
+function addCustomWebsiteToUI(hostname, label, blockerEnabled, websiteBlockerStates) {
   const customWebsitesDiv = document.getElementById('customWebsites');
   const websiteDiv = document.createElement('div');
   websiteDiv.className = 'switch';
   websiteDiv.innerHTML = `
     <label>
       ${label}:
-      <input type="checkbox" id="custom_${hostname}">
+      <input type="checkbox" id="custom_${hostname}" class="customSwitch">
     </label>
     <button class="removeCustomWebsiteButton" data-hostname="${hostname}">Remove</button>
   `;
   customWebsitesDiv.appendChild(websiteDiv);
 
-  document.getElementById(`custom_${hostname}`).addEventListener('change', function() {
+  const customSwitch = document.getElementById(`custom_${hostname}`);
+  customSwitch.checked = websiteBlockerStates && websiteBlockerStates[hostname] || false;
+  customSwitch.disabled = blockerEnabled;
+
+  customSwitch.addEventListener('change', function() {
     chrome.storage.sync.get('websiteBlockerStates', function(data) {
       const websiteBlockerStates = data.websiteBlockerStates || {};
-      websiteBlockerStates[hostname] = document.getElementById(`custom_${hostname}`).checked;
-      chrome.storage.sync.set({ websiteBlockerStates: websiteBlockerStates }, function() {
-        // No need to reload or send a message to the content script here
-      });
+      websiteBlockerStates[hostname] = customSwitch.checked;
+      chrome.storage.sync.set({ websiteBlockerStates: websiteBlockerStates });
     });
   });
 
@@ -108,15 +113,24 @@ function addCustomWebsiteToUI(hostname, label) {
 // Add custom website
 document.getElementById('addCustomWebsiteButton').addEventListener('click', function() {
   const customWebsiteInput = document.getElementById('customWebsiteInput');
+  const customWebsiteNameInput = document.getElementById('customWebsiteNameInput');
   const hostname = customWebsiteInput.value.trim();
-  if (hostname) {
+  const websiteName = customWebsiteNameInput.value.trim();
+  if (hostname && websiteName) {
+    if (!/^www\./.test(hostname)) {
+      alert("Please ensure the website URL starts with 'www.'");
+      return;
+    }
     chrome.storage.sync.get('customWebsites', function(data) {
       const customWebsites = data.customWebsites || {};
-      customWebsites[hostname] = hostname;
+      customWebsites[hostname] = websiteName;
       chrome.storage.sync.set({ customWebsites: customWebsites }, function() {
-        addCustomWebsiteToUI(hostname, hostname);
+        addCustomWebsiteToUI(hostname, websiteName, document.getElementById('masterToggleButton').textContent === 'Toggle OFF', {});
         customWebsiteInput.value = '';
+        customWebsiteNameInput.value = '';
       });
     });
+  } else {
+    alert("Please enter both a valid website URL and a name.");
   }
 });

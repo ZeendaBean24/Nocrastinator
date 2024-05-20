@@ -84,15 +84,16 @@
           <input type="checkbox" id="twitterSwitch">
         </label>
       </div>
-      <input type="text" id="customWebsiteInput" placeholder="Enter custom website">
+    </div>
+    <p id="overrideText" style="display: none;">Master switch is ON. Individual switches are overridden.</p>
+    <div>
+      <input type="text" id="customWebsiteInput" placeholder="Enter custom website (e.g., www.example.com)">
+      <input type="text" id="customWebsiteNameInput" placeholder="Enter website name">
       <button id="addCustomWebsiteButton">Add Website</button>
     </div>
     <div id="customWebsites">
       <!-- Custom websites will be listed here -->
     </div>
-    </div>
-      <p id="overrideText" style="display: none;">Master switch is ON. Individual switches are overridden.</p>
-    <div>
   </div>
   <script src="popup.js"></script>
 </body>
