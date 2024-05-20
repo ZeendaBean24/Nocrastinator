@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file.
   - Custom website names for easy identification.
   - Intuitive and user-friendly interface for blocking websites.
 
-## [1.0] - 2024-02-28
+## [1.0.0] - 2024-02-28
 ### Added
 - Custom New Tab functionality:
   - **Clock**: Displays the current time with theme-based styling.
