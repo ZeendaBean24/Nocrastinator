@@ -6,26 +6,32 @@
   <title>Popup</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
     body {
       width: 400px; /* Adjust width as needed */
       height: auto; /* Adjust height as needed */
-      font-family: "Orbitron", sans-serif;
+      font-family: "Roboto Slab", serif;
       background-color: powderblue;
       color: midnightblue;
     }
+
+    h1 {
+      font-family: "Orbitron", sans-serif;
+    }
+
     .hover-effect:hover {
       background-color: midnightblue;
       color: powderblue;
     }
-    .placeholder-orbitron::placeholder {
-      font-family: "Orbitron", sans-serif;
+    .placeholder-roboto::placeholder {
+      font-family: "Roboto Slab", serif;
       color: midnightblue;
     }
     button {
-      font-family: "Orbitron", sans-serif;
+      font-family: "Roboto Slab", serif;
     }
-    
+
     #popup {
       display: flex;
       flex-direction: column;
@@ -136,10 +142,10 @@
     <hr class="my-4">
     <div class="form-group flex items-center mb-4">
       <label for="customWebsiteInput" class="mr-2">Check if URL has 'www':</label>
-      <input type="text" id="customWebsiteInput" class="flex-grow px-4 py-2 border rounded placeholder-midnightblue placeholder-orbitron mb-4" placeholder="Website Link">
+      <input type="text" id="customWebsiteInput" class="flex-grow px-4 py-2 border rounded placeholder-midnightblue placeholder-roboto mb-4" placeholder="Website Link">
     </div>
     <div class="form-group flex items-center">
-      <input type="text" id="customWebsiteNameInput" class="flex-grow px-4 py-2 border rounded mr-2 placeholder-midnightblue placeholder-orbitron" placeholder="Name">
+      <input type="text" id="customWebsiteNameInput" class="flex-grow px-4 py-2 border rounded mr-2 placeholder-midnightblue placeholder-roboto" placeholder="Name">
       <button id="addCustomWebsiteButton" class="px-4 py-2 bg-midnightblue text-white rounded hover:bg-powderblue hover:text-midnightblue">Add Website</button>
     </div>
   </div>
