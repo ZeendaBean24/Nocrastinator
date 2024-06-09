@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>Popup</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
@@ -10,6 +11,12 @@
       width: 400px; /* Adjust width as needed */
       height: auto; /* Adjust height as needed */
       font-family: "Orbitron", sans-serif;
+      background-color: powderblue;
+      color: midnightblue;
+      .hover-effect:hover {
+        background-color: midnightblue;
+        color: powderblue;
+      }
     }
     #popup {
       display: flex;
@@ -44,84 +51,84 @@
     }
   </style>
 </head>
-<body>
-  <div id="popup">
-    <div class="switch" style="justify-content: center;">
-      <label>
-        Block all websites:
-        <span id="blockStatus">OFF</span>
-        <button id="masterToggleButton">Toggle ON</button>
+<body class="flex items-center justify-center min-h-screen">
+  <div id="popup" class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
+    <div class="switch flex justify-center mb-4">
+      <label class="flex items-center">
+        <span class="mr-2">Block all websites:</span>
+        <span id="blockStatus" class="font-bold mr-2">OFF</span>
+        <button id="masterToggleButton" class="px-4 py-2 bg-midnightblue text-white rounded hover:bg-powderblue hover:text-midnightblue">Toggle ON</button>
       </label>
     </div>
-    <hr>
+    <hr class="my-4">
     <div id="individualSwitches">
-      <div class="switch">
-        <label>
-          YouTube:
-          <input type="checkbox" id="youtubeSwitch">
+      <div class="switch flex justify-between mb-2">
+        <label class="flex items-center">
+          <span class="mr-2">YouTube:</span>
+          <input type="checkbox" id="youtubeSwitch" class="form-checkbox text-midnightblue">
         </label>
       </div>
-      <div class="switch">
-        <label>
-          Facebook:
-          <input type="checkbox" id="facebookSwitch">
+      <div class="switch flex justify-between mb-2">
+        <label class="flex items-center">
+          <span class="mr-2">Facebook:</span>
+          <input type="checkbox" id="facebookSwitch" class="form-checkbox text-midnightblue">
         </label>
       </div>
-      <div class="switch">
-        <label>
-          Netflix:
-          <input type="checkbox" id="netflixSwitch">
+      <div class="switch flex justify-between mb-2">
+        <label class="flex items-center">
+          <span class="mr-2">Netflix:</span>
+          <input type="checkbox" id="netflixSwitch" class="form-checkbox text-midnightblue">
         </label>
       </div>
-      <div class="switch">
-        <label>
-          Roblox:
-          <input type="checkbox" id="robloxSwitch">
+      <div class="switch flex justify-between mb-2">
+        <label class="flex items-center">
+          <span class="mr-2">Roblox:</span>
+          <input type="checkbox" id="robloxSwitch" class="form-checkbox text-midnightblue">
         </label>
       </div>
-      <div class="switch">
-        <label>
-          Discord:
-          <input type="checkbox" id="discordSwitch">
+      <div class="switch flex justify-between mb-2">
+        <label class="flex items-center">
+          <span class="mr-2">Discord:</span>
+          <input type="checkbox" id="discordSwitch" class="form-checkbox text-midnightblue">
         </label>
       </div>
-      <div class="switch">
-        <label>
-          Instagram:
-          <input type="checkbox" id="instagramSwitch">
+      <div class="switch flex justify-between mb-2">
+        <label class="flex items-center">
+          <span class="mr-2">Instagram:</span>
+          <input type="checkbox" id="instagramSwitch" class="form-checkbox text-midnightblue">
         </label>
       </div>
-      <div class="switch">
-        <label>
-          Snapchat:
-          <input type="checkbox" id="snapchatSwitch">
+      <div class="switch flex justify-between mb-2">
+        <label class="flex items-center">
+          <span class="mr-2">Snapchat:</span>
+          <input type="checkbox" id="snapchatSwitch" class="form-checkbox text-midnightblue">
         </label>
       </div>
-      <div class="switch">
-        <label>
-          Reddit:
-          <input type="checkbox" id="redditSwitch">
+      <div class="switch flex justify-between mb-2">
+        <label class="flex items-center">
+          <span class="mr-2">Reddit:</span>
+          <input type="checkbox" id="redditSwitch" class="form-checkbox text-midnightblue">
         </label>
       </div>
-      <div class="switch">
-        <label>
-          Twitter (X):
-          <input type="checkbox" id="twitterSwitch">
+      <div class="switch flex justify-between mb-2">
+        <label class="flex items-center">
+          <span class="mr-2">Twitter (X):</span>
+          <input type="checkbox" id="twitterSwitch" class="form-checkbox text-midnightblue">
         </label>
       </div>
     </div>
-    <div id="customWebsites">
+    <div id="customWebsites" class="mt-4">
       <!-- Custom websites will be listed here -->
     </div>
-    <p id="overrideText" style="display: none;">Master switch is ON. Individual switches are overridden.</p>
-    <hr>
-    <div class="form-group">
-      <label for="customWebsiteInput">Check if URL has 'www':</label>
-      <input type="text" id="customWebsiteInput" placeholder="Website Link">
+    <p id="overrideText" class="text-red-600 mt-2" style="display: none;">Master switch is ON. Individual switches are overridden.</p>
+    <hr class="my-4">
+    <div class="form-group flex items-center mb-4">
+      <label for="customWebsiteInput" class="mr-2">Check if URL has 'www':</label>
+      <input type="text" id="customWebsiteInput" class="flex-grow px-4 py-2 border rounded" placeholder="Website Link">
     </div>
-    <div class="form-group">
-      <input type="text" id="customWebsiteNameInput" placeholder="Name">
-      <button id="addCustomWebsiteButton">Add Website</button>
+    <div class="form-group flex items-center">
+      <input type="text" id="customWebsiteNameInput" class="flex-grow px-4 py-2 border rounded mr-2" placeholder="Name">
+      <button id="addCustomWebsiteButton" class="px-4 py-2 bg-midnightblue text-white rounded hover:bg-powderblue hover:text-midnightblue">Add Website</button>
     </div>
   </div>
   <script src="popup.js"></script>
