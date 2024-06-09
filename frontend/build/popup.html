@@ -13,11 +13,19 @@
       font-family: "Orbitron", sans-serif;
       background-color: powderblue;
       color: midnightblue;
-      .hover-effect:hover {
-        background-color: midnightblue;
-        color: powderblue;
-      }
     }
+    .hover-effect:hover {
+      background-color: midnightblue;
+      color: powderblue;
+    }
+    .placeholder-orbitron::placeholder {
+      font-family: "Orbitron", sans-serif;
+      color: midnightblue;
+    }
+    button {
+      font-family: "Orbitron", sans-serif;
+    }
+    
     #popup {
       display: flex;
       flex-direction: column;
@@ -53,11 +61,15 @@
 </head>
 <body class="flex items-center justify-center min-h-screen">
   <div id="popup" class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
+    <!-- Add logo and title here -->
+    <div class="flex flex-col items-center mb-4">
+      <h1 class="text-2xl font-bold text-midnightblue">Nocrastinator</h1>
+    </div>
     <div class="switch flex justify-center mb-4">
       <label class="flex items-center">
         <span class="mr-2">Block all websites:</span>
         <span id="blockStatus" class="font-bold mr-2">OFF</span>
-        <button id="masterToggleButton" class="px-4 py-2 bg-midnightblue text-white rounded hover:bg-powderblue hover:text-midnightblue">Toggle ON</button>
+        <button id="masterToggleButton" class="px-4 py-2 bg-midnightblue text-white rounded hover:bg-powderblue hover:text-midnightblue ml-2">Toggle ON</button>
       </label>
     </div>
     <hr class="my-4">
@@ -124,10 +136,10 @@
     <hr class="my-4">
     <div class="form-group flex items-center mb-4">
       <label for="customWebsiteInput" class="mr-2">Check if URL has 'www':</label>
-      <input type="text" id="customWebsiteInput" class="flex-grow px-4 py-2 border rounded" placeholder="Website Link">
+      <input type="text" id="customWebsiteInput" class="flex-grow px-4 py-2 border rounded placeholder-midnightblue placeholder-orbitron mb-4" placeholder="Website Link">
     </div>
     <div class="form-group flex items-center">
-      <input type="text" id="customWebsiteNameInput" class="flex-grow px-4 py-2 border rounded mr-2" placeholder="Name">
+      <input type="text" id="customWebsiteNameInput" class="flex-grow px-4 py-2 border rounded mr-2 placeholder-midnightblue placeholder-orbitron" placeholder="Name">
       <button id="addCustomWebsiteButton" class="px-4 py-2 bg-midnightblue text-white rounded hover:bg-powderblue hover:text-midnightblue">Add Website</button>
     </div>
   </div>
