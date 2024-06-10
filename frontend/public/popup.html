@@ -7,6 +7,10 @@
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       width: 400px; /* Adjust width as needed */
       height: auto; /* Adjust height as needed */
@@ -25,22 +29,24 @@
     }
 
     .button {
-      padding: 10px 20px;
+      padding: 8px 16px; /* Reduced padding for smaller text */
       background-color: midnightblue;
       color: powderblue;
       border: 1px solid midnightblue; /* Set border size here */
       border-radius: 5px;
       cursor: pointer;
       font-family: "Roboto Slab", serif;
+      font-size: 10px; /* Smaller text size */
       margin-left: 10px;
-      box-sizing: border-box;
+      box-sizing: border-box; /* Ensure box-sizing is applied */
     }
 
     .button:hover {
       background-color: powderblue;
       color: midnightblue;
-      border: 1px solid midnightblue;
-      border-radius: 5px;    }
+      border: 1px solid midnightblue; /* Keep the border size consistent */
+      border-radius: 5px;
+    }
 
     .input-placeholder::placeholder {
       font-family: "Roboto Slab", serif;
@@ -90,12 +96,18 @@
       width: 100%;
       margin: 10px 0;
       border: 0;
-      border-top: 1px solid #ccc;
+      border-top: 3px solid midnightblue; /* Thicker and colored border */
     }
 
     .checkbox {
       width: 20px;
       height: 20px;
+    }
+
+    .label-block {
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
     }
 
   </style>
@@ -107,9 +119,9 @@
       <h1 class="text-2xl font-bold text-midnightblue">Nocrastinator</h1>
     </div>
     <div class="switch justify-center mb-4">
-      <label class="flex items-center">
-        <span class="mr-2">Block all websites:</span>
-        <span id="blockStatus" class="font-bold mr-2">OFF</span>
+      <label class="label-block">
+        <span>Block all websites:</span>
+        <span id="blockStatus" class="font-bold">OFF</span>
         <button id="masterToggleButton" class="button">Toggle ON</button>
       </label>
     </div>
