@@ -79,9 +79,9 @@ function addCustomWebsiteToUI(hostname, label, blockerEnabled, websiteBlockerSta
   websiteDiv.innerHTML = `
     <label>
       ${label}:
-      <input type="checkbox" id="custom_${hostname}" class="customSwitch">
+      <input type="checkbox" id="custom_${hostname}" class="customSwitch checkbox">
     </label>
-    <button class="removeCustomWebsiteButton" data-hostname="${hostname}">Remove</button>
+    <button class="button removeCustomWebsiteButton" data-hostname="${hostname}">Remove</button>
   `;
   customWebsitesDiv.appendChild(websiteDiv);
 
@@ -109,6 +109,8 @@ function addCustomWebsiteToUI(hostname, label, blockerEnabled, websiteBlockerSta
     });
   });
 }
+
+
 
 // Add custom website
 document.getElementById('addCustomWebsiteButton').addEventListener('click', function() {
