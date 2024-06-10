@@ -78,11 +78,11 @@ function addCustomWebsiteToUI(hostname, label, blockerEnabled, websiteBlockerSta
   websiteDiv.className = 'switch';
   websiteDiv.style.margin = '10px 0'; // Ensures the margin is consistent
   websiteDiv.innerHTML = `
-    <div class="flex-container">
-      <span style="margin-right: 5px;">${label}:</span>
+    <label class="switch" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+      <span style="margin-right: 5px; flex-grow: 1;">${label}:</span>
       <button class="button removeCustomWebsiteButton" data-hostname="${hostname}">Remove</button>
       <input type="checkbox" id="custom_${hostname}" class="customSwitch checkbox" style="width: 20px; height: 20px; margin-left: 10px; cursor: pointer;">
-    </div>
+    </label>
   `;
   checkboxGridDiv.appendChild(websiteDiv);
 
