@@ -9,11 +9,9 @@
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
     body {
-      width: 400px; /* Adjust width as needed */
-      height: auto; /* Adjust height as needed */
       font-family: "Roboto Slab", serif;
-      background-color: powderblue;
-      color: midnightblue;
+      background-color: #B0E0E6; /* powderblue */
+      color: #191970; /* midnightblue */
     }
 
     h1 {
@@ -21,13 +19,15 @@
     }
 
     .hover-effect:hover {
-      background-color: midnightblue;
-      color: powderblue;
+      background-color: #191970; /* midnightblue */
+      color: #B0E0E6; /* powderblue */
     }
+
     .placeholder-roboto::placeholder {
       font-family: "Roboto Slab", serif;
-      color: midnightblue;
+      color: #191970; /* midnightblue */
     }
+
     button {
       font-family: "Roboto Slab", serif;
     }
@@ -37,35 +37,43 @@
       flex-direction: column;
       align-items: center;
       padding: 10px;
+      background-color: white;
+      color: #191970; /* midnightblue */
     }
+
     .switch {
       margin: 10px 0;
       display: flex;
       justify-content: space-between;
       width: 100%;
     }
+
     .form-group {
       display: flex;
       align-items: center;
       width: 100%;
     }
+
     .form-group label {
       margin-right: 10px;
     }
+
     .form-group input {
       margin-right: 10px;
       flex-grow: 1;
     }
+
     .form-group button {
       margin-left: 10px;
     }
+
     hr {
       width: 100%;
       margin: 10px 0;
     }
   </style>
 </head>
-<body class="flex items-center justify-center min-h-screen">
+<body class="flex items-center justify-center min-h-screen bg-powderblue text-midnightblue">
   <div id="popup" class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
     <!-- Add logo and title here -->
     <div class="flex flex-col items-center mb-4">
@@ -142,10 +150,10 @@
     <hr class="my-4">
     <div class="form-group flex items-center mb-4">
       <label for="customWebsiteInput" class="mr-2">Check if URL has 'www':</label>
-      <input type="text" id="customWebsiteInput" class="flex-grow px-4 py-2 border rounded placeholder-midnightblue placeholder-roboto mb-4" placeholder="Website Link">
+      <input type="text" id="customWebsiteInput" class="flex-grow px-4 py-2 border rounded placeholder-roboto mb-4" placeholder="Website Link">
     </div>
     <div class="form-group flex items-center">
-      <input type="text" id="customWebsiteNameInput" class="flex-grow px-4 py-2 border rounded mr-2 placeholder-midnightblue placeholder-roboto" placeholder="Name">
+      <input type="text" id="customWebsiteNameInput" class="flex-grow px-4 py-2 border rounded mr-2 placeholder-roboto" placeholder="Name">
       <button id="addCustomWebsiteButton" class="px-4 py-2 bg-midnightblue text-white rounded hover:bg-powderblue hover:text-midnightblue">Add Website</button>
     </div>
   </div>

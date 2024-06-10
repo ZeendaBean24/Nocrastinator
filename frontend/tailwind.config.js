@@ -3,7 +3,12 @@ module.exports = {
       "./public/**/*.{html,js}",
     ],
     theme: {
-      extend: {},
+      extend: {
+        colors: {
+            powderblue: '#B0E0E6',
+            midnightblue: '#191970'
+          },
+      },
     },
     plugins: [],
   }
