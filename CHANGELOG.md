@@ -3,7 +3,12 @@
 All notable changes to this project will be documented in this file.
 
 ---
-
+## [1.1.1] - 2024-06-09
+### Added
+- UI Refinements to the Extension Popup.
+- Some Minor Bug Fixes to improve UX.
+- **Ready for Publishing on Chrome Web Store!**
+  
 ## [1.1.0] - 2024-05-20
 ### Added
 - Website Blocker functionality:
