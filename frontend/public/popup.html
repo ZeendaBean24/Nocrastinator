@@ -29,6 +29,8 @@
     }
 
     .button {
+      height: 30px;
+      vertical-align: center;
       padding: 8px 16px; /* Reduced padding for smaller text */
       background-color: midnightblue;
       color: powderblue;
@@ -73,6 +75,17 @@
       width: 100%;
     }
 
+    .switch label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .switch label span {
+      margin-right: 5px; /* Adjust as needed to reduce padding */
+    }
+
     .form-group {
       display: flex;
       align-items: center;
@@ -102,6 +115,7 @@
     .checkbox {
       width: 20px;
       height: 20px;
+      cursor: pointer;
     }
 
     .label-block {

@@ -73,7 +73,7 @@ for (const switchId in websiteSwitches) {
 
 // Function to add custom website to UI
 function addCustomWebsiteToUI(hostname, label, blockerEnabled, websiteBlockerStates) {
-  const checkboxGridDiv = document.getElementById('individualSwitches');
+  const checkboxGridDiv = document.getElementById('customWebsites');
   const websiteDiv = document.createElement('div');
   websiteDiv.className = 'switch';
   websiteDiv.innerHTML = `
