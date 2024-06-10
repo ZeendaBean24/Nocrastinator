@@ -3,9 +3,14 @@
   "short_name": "Focus!",
   "name": "Nocrastinator!",
   "version": "1.0",
+   "icons": {
+    "16": "icons/light_icon16.png",
+    "48": "icons/light_icon48.png",
+    "128": "icons/light_icon128.png"
+  },
   "browser_action": {
     "default_popup": "Popup.html",
-    "default_title": "Procrastination Blocker"
+    "default_title": "Nocrastinator"
   },
   "chrome_url_overrides": {
     "newtab": "index.html"
