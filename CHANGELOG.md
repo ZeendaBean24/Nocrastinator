@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - UI Refinements to the Extension Popup.
 - Some Minor Bug Fixes to improve UX.
+- Official Nocrastinator Logo and Favicon.
 - **Ready for Publishing on Chrome Web Store!**
   
 ## [1.1.0] - 2024-05-20
