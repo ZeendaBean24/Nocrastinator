@@ -73,15 +73,16 @@ for (const switchId in websiteSwitches) {
 
 // Function to add custom website to UI
 function addCustomWebsiteToUI(hostname, label, blockerEnabled, websiteBlockerStates) {
-  const checkboxGridDiv = document.getElementById('customWebsites');
+  const checkboxGridDiv = document.getElementById('individualSwitches');
   const websiteDiv = document.createElement('div');
   websiteDiv.className = 'switch';
+  websiteDiv.style.margin = '10px 0'; // Ensures the margin is consistent
   websiteDiv.innerHTML = `
-    <label class="switch">
-      <span>${label}:</span>
-      <input type="checkbox" id="custom_${hostname}" class="customSwitch checkbox">
-    </label>
-    <button class="button removeCustomWebsiteButton" data-hostname="${hostname}">Remove</button>
+    <div class="flex-container">
+      <span style="margin-right: 5px;">${label}:</span>
+      <button class="button removeCustomWebsiteButton" data-hostname="${hostname}">Remove</button>
+      <input type="checkbox" id="custom_${hostname}" class="customSwitch checkbox" style="width: 20px; height: 20px; margin-left: 10px; cursor: pointer;">
+    </div>
   `;
   checkboxGridDiv.appendChild(websiteDiv);
 

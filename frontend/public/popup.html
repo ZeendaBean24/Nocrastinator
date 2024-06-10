@@ -29,8 +29,9 @@
     }
 
     .button {
-      height: 30px;
-      vertical-align: center;
+      height: 25px;
+      display: flex; /* Added */
+      align-items: center; /* Added */
       padding: 8px 16px; /* Reduced padding for smaller text */
       background-color: midnightblue;
       color: powderblue;
@@ -40,8 +41,11 @@
       font-family: "Roboto Slab", serif;
       font-size: 10px; /* Smaller text size */
       margin-left: 10px;
+      margin-top: 0;
+      margin-bottom: 0;
       box-sizing: border-box; /* Ensure box-sizing is applied */
     }
+
 
     .button:hover {
       background-color: powderblue;
@@ -68,10 +72,18 @@
       max-width: 400px;
     }
 
+    .flex-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Ensure no overlap */
+      width: 100%;
+    }
+
     .switch {
       margin: 10px 0;
       display: flex;
       justify-content: space-between;
+      align-items: center; /* Ensures vertical alignment */
       width: 100%;
     }
 
@@ -79,6 +91,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-right: 10px; /* Adjust as needed to reduce padding */
       width: 100%;
     }
 
@@ -115,6 +128,7 @@
     .checkbox {
       width: 20px;
       height: 20px;
+      margin-left: 10px;
       cursor: pointer;
     }
 
@@ -202,9 +216,6 @@
           <input type="checkbox" id="twitterSwitch" class="checkbox">
         </label>
       </div>
-    </div>
-    <div id="customWebsites" class="mt-4">
-      <!-- Custom websites will be listed here -->
     </div>
     <p id="overrideText" class="text-red-600 mt-2" style="display: none;">Master switch is ON. Individual switches are overridden.</p>
     <hr>
