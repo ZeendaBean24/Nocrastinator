@@ -110,6 +110,13 @@
       width: 100%;
     }
 
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px; /* Adjust gap between columns */
+      width: 100%;
+    }
+
   </style>
 </head>
 <body>
@@ -126,58 +133,58 @@
       </label>
     </div>
     <hr>
-    <div id="individualSwitches">
-      <div class="switch flex justify-between mb-2">
-        <label class="flex items-center">
-          <span class="mr-2">YouTube:</span>
+    <div id="individualSwitches" class="checkbox-grid">
+      <div class="switch">
+        <label>
+          <span>YouTube:</span>
           <input type="checkbox" id="youtubeSwitch" class="checkbox">
         </label>
       </div>
-      <div class="switch flex justify-between mb-2">
-        <label class="flex items-center">
-          <span class="mr-2">Facebook:</span>
+      <div class="switch">
+        <label>
+          <span>Facebook:</span>
           <input type="checkbox" id="facebookSwitch" class="checkbox">
         </label>
       </div>
-      <div class="switch flex justify-between mb-2">
-        <label class="flex items-center">
-          <span class="mr-2">Netflix:</span>
+      <div class="switch">
+        <label>
+          <span>Netflix:</span>
           <input type="checkbox" id="netflixSwitch" class="checkbox">
         </label>
       </div>
-      <div class="switch flex justify-between mb-2">
-        <label class="flex items-center">
-          <span class="mr-2">Roblox:</span>
+      <div class="switch">
+        <label>
+          <span>Roblox:</span>
           <input type="checkbox" id="robloxSwitch" class="checkbox">
         </label>
       </div>
-      <div class="switch flex justify-between mb-2">
-        <label class="flex items-center">
-          <span class="mr-2">Discord:</span>
+      <div class="switch">
+        <label>
+          <span>Discord:</span>
           <input type="checkbox" id="discordSwitch" class="checkbox">
         </label>
       </div>
-      <div class="switch flex justify-between mb-2">
-        <label class="flex items-center">
-          <span class="mr-2">Instagram:</span>
+      <div class="switch">
+        <label>
+          <span>Instagram:</span>
           <input type="checkbox" id="instagramSwitch" class="checkbox">
         </label>
       </div>
-      <div class="switch flex justify-between mb-2">
-        <label class="flex items-center">
-          <span class="mr-2">Snapchat:</span>
+      <div class="switch">
+        <label>
+          <span>Snapchat:</span>
           <input type="checkbox" id="snapchatSwitch" class="checkbox">
         </label>
       </div>
-      <div class="switch flex justify-between mb-2">
-        <label class="flex items-center">
-          <span class="mr-2">Reddit:</span>
+      <div class="switch">
+        <label>
+          <span>Reddit:</span>
           <input type="checkbox" id="redditSwitch" class="checkbox">
         </label>
       </div>
-      <div class="switch flex justify-between mb-2">
-        <label class="flex items-center">
-          <span class="mr-2">Twitter (X):</span>
+      <div class="switch">
+        <label>
+          <span>Twitter (X):</span>
           <input type="checkbox" id="twitterSwitch" class="checkbox">
         </label>
       </div>

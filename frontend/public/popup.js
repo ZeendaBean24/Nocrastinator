@@ -73,17 +73,17 @@ for (const switchId in websiteSwitches) {
 
 // Function to add custom website to UI
 function addCustomWebsiteToUI(hostname, label, blockerEnabled, websiteBlockerStates) {
-  const customWebsitesDiv = document.getElementById('customWebsites');
+  const checkboxGridDiv = document.getElementById('individualSwitches');
   const websiteDiv = document.createElement('div');
   websiteDiv.className = 'switch';
   websiteDiv.innerHTML = `
-    <label>
-      ${label}:
+    <label class="switch">
+      <span>${label}:</span>
       <input type="checkbox" id="custom_${hostname}" class="customSwitch checkbox">
     </label>
     <button class="button removeCustomWebsiteButton" data-hostname="${hostname}">Remove</button>
   `;
-  customWebsitesDiv.appendChild(websiteDiv);
+  checkboxGridDiv.appendChild(websiteDiv);
 
   const customSwitch = document.getElementById(`custom_${hostname}`);
   customSwitch.checked = websiteBlockerStates && websiteBlockerStates[hostname] || false;
@@ -109,7 +109,6 @@ function addCustomWebsiteToUI(hostname, label, blockerEnabled, websiteBlockerSta
     });
   });
 }
-
 
 
 // Add custom website
